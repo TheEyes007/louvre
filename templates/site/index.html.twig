@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+{% block title %}Le Musée du Louvre vous accueille - Inscription{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m6">
+                <div class="card small">
+                    <div class="card-image">
+                        <img src="{{ asset('img/montagne.jpg') }}">
+                        <span class="card-title">Japonisme 2018</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Exposition japonaise durant cet été comportant des peintures traditionnelles et des statues.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6">
+                <div class="card small">
+                    <div class="card-image">
+                        <img src="{{ asset('img/pompador.jpg') }}">
+                        <span class="card-title">Exposition en société</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Découvrez les pastels du 17 et 18e siècle avec notamment la marquise de Pompadour.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6">
+                <div class="card small">
+                    <div class="card-image">
+                        <img src="{{ asset('img/tuilerie.jpg') }}">
+                        <span class="card-title">Evènement aux tuileries</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Le jardin de tuilerie accueillera une exposition comportant des images projetées sur le pierre et refletées par les jets d'eau.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6">
+                <div class="card small">
+                    <div class="card-image">
+                        <img src="{{ asset('img/empereur.jpg') }}">
+                        <span class="card-title">Visite Gallo-Romaine</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Les armes et armures, les objets de la vie quotidienne de l'empire Romain vous seront présentés dans une exposition jamais vue en France depuis 5 ans.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

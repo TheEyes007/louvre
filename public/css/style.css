@@ -84,3 +84,18 @@ footer.page-footer {
 p{
   text-align: justify;
 }
+
+.form-style{
+  background-color: rgba(255,255,255,.9);
+  padding:20px;
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+label{
+  color:black;
+}
+
+.card-title{
+  font-size:0.8em;
+}

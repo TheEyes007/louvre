@@ -4,4 +4,4 @@ homepage:
 
 accounts:
     path: /reservation
-    controller: App\Controller\homepageController::index
+    controller: App\Controller\accountsController::accountsInfo

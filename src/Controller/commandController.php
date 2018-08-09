@@ -14,15 +14,12 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Form\FormFactoryInterface;
 use Twig\Environment;
-use App\Form\AccountsType;
-use App\DTO\usersParams;
-use Symfony\Component\HttpFoundation\Session\Session;
 
 /**
  * Class accountsController
  * @package App\Controller
  */
-class accountsController
+class commandController
 {
     /**
      * @var Environment
@@ -54,22 +51,10 @@ class accountsController
      * @param Request $request
      * @return RedirectResponse|Response
      */
-     public function accountsInfo(Request $request){
-         $session = new Session();
-         $session->start();
-         $userparams = new usersParams();
-         $form = $this->formFactory->create(AccountsType::class);
-         $form->handleRequest($request);
-
-         if ($form->isSubmitted() && $form->isValid()) {
-             $userparams = $form->getData();
-             $session->set('userparams',$userparams);
-             return new RedirectResponse($this->router->generate('command'));
-         }
-
-         return new Response($this->twig->render('reservation/accounts.html.twig',array(
-             'form' => $form->createView(),
-         )));
+     public function commandInfo(Request $request){
+         $session = $request->getSession();
+         $userparams = $session->get('userparams');
+         return new Response($this->twig->render('reservation/commands.html.twig',array('userparams' => $userparams)));
      }
 
 

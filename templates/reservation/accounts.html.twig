@@ -11,7 +11,12 @@
                     <div class="card-content">
                         {{ form_row(form.name, {'label' : "Votre nom"}) }}
                         {{ form_row(form.firstname, {'label' : "Votre prénom"}) }}
-                        {{ form_row(form.dateofbirth, {'label' : "Date de naissance"}) }}
+                        <div>
+                            {{ form_errors(form.dateofbirth) }}
+                            <label for="accounts_dateofbirth" class="required active">Date de naissance</label>
+                        {{ form_widget(form.dateofbirth) }}
+                            <span class="btn-floating btn-small waves-effect waves-light white datepicker"><i class="material-icons black">date_range</i></span>
+                        </div>
                         {{ form_row(form.email, {'label' : "Email"}) }}
                     </div>
                     <div class="card-action">

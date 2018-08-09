@@ -17,7 +17,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 
 
-class AccountsType extends AbstractType
+class CommandsType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -28,9 +28,8 @@ class AccountsType extends AbstractType
                 'invalid_message' => 'Format de date incorrect',
                 'widget' => 'single_text',
                 'html5' => false,
-                'attr' => array('placeholder' => 'dd/mm/YYYY'),
-                'format' => 'dd/MM/yyyy',
-                'years' => range(date('Y')-100, date('Y')-18)))
+                'attr' => array('class' => 'datepicker','placeholder' => 'dd/mm/YYYY'),
+                'format' => 'dd/mm/yyyy',))
             ->add('email', EmailType::class, array('attr' => array('placeholder' => 'Votre adresse email'),))
         ;
     }

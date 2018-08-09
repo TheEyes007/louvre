@@ -27,6 +27,8 @@ App\DTO\usersParams:
         dateofbirth:
             - NotBlank:
                 message: 'Ce champ ne doit pas être vide.'
+            - App\Validator\Constraints\ContainsMajorAge:
+                message: 'Vous devez avoir 18 ans pour commander.'
         email:
             - NotBlank:
                 message: 'Ce champ ne doit pas être vide.'

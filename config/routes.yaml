@@ -5,3 +5,7 @@ homepage:
 accounts:
     path: /reservation
     controller: App\Controller\accountsController::accountsInfo
+
+command:
+    path: /reservation/commande
+    controller: App\Controller\commandController::commandInfo

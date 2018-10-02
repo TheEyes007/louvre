@@ -1,4 +1,4 @@
-App\DTO\usersParams:
+App\Domain\DTO\TicketsDTO:
     properties:
         name:
             - NotBlank:
@@ -27,11 +27,12 @@ App\DTO\usersParams:
         dateofbirth:
             - NotBlank:
                 message: 'Ce champ ne doit pas être vide.'
-            - App\Validator\Constraints\ContainsMajorAge:
-                message: 'Vous devez avoir 18 ans pour commander.'
-        email:
+        tarif:
             - NotBlank:
                 message: 'Ce champ ne doit pas être vide.'
-            - Email:
-                message: Cet email {{ value }} n'est pas un email conforme.
-                checkMX: true
+        dateofbooking:
+            - NotBlank:
+                message: 'Ce champ ne doit pas être vide.'
+        country:
+            - NotBlank:
+                message: 'Ce champ ne doit pas être vide.'

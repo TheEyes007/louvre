@@ -12,5 +12,5 @@ use Symfony\Component\Validator\Constraint;
 
 class ContainsMajorAge extends Constraint
 {
-    public $message = 'Vous avez "{{ string }}" ans. Vous devez avoir 18 ans pour commande.';
+    public $message = 'Vous avez "{{ string }}" ans. Vous devez avoir 18 ans pour commander.';
 }

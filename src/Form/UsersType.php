@@ -8,17 +8,25 @@
 
 namespace App\Form;
 
-use App\DTO\usersParams;
+use App\Domain\DTO\UsersDTO;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 
-
-class AccountsType extends AbstractType
+/**
+ * Class AccountsType
+ * @package App\Form
+ */
+class UsersType extends AbstractType
 {
+    /**
+     * @param FormBuilderInterface $builder
+     * @param array $options
+     */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
@@ -28,17 +36,28 @@ class AccountsType extends AbstractType
                 'invalid_message' => 'Format de date incorrect',
                 'widget' => 'single_text',
                 'html5' => false,
-                'attr' => array('placeholder' => 'dd/mm/YYYY'),
+                'attr' => array('placeholder' => 'dd/mm/YYYY','class' => 'datepicker'),
                 'format' => 'dd/MM/yyyy',
-                'years' => range(date('Y')-100, date('Y')-18)))
+                'years' => range(date('Y')-100, date('Y')-18),))
             ->add('email', EmailType::class, array('attr' => array('placeholder' => 'Votre adresse email'),))
         ;
     }
 
+    /**
+     * @param OptionsResolver $resolver
+     */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => usersParams::class,
+            'data_class' => UsersDTO::class,
+            'empty_data' => function(FormInterface $form){
+                return new UsersDTO(
+                    $form->get('name')->getData(),
+                    $form->get('firstname')->getData(),
+                    $form->get('dateofbirth')->getData(),
+                    $form->get('email')->getData()
+                    );
+            }
         ));
     }
 }

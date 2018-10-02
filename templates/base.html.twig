@@ -58,7 +58,8 @@
             {% block javascripts %}
                 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
                 <script type="text/javascript" src="{{ asset('materialize/js/materialize.min.js') }}"></script>
-                <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
+                <script type="module" src="{{ asset('js/component/Init.js') }}"></script>
+                <script type="module" src="{{ asset('js/main.js') }}"></script>
             {% endblock %}
     </body>
 </html>

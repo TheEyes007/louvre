@@ -1,0 +1,38 @@
+App\Domain\DTO\UsersDTO:
+    properties:
+        name:
+            - NotBlank:
+                message: 'Ce champ ne doit pas être vide.'
+            - Regex:
+                pattern: '/\d/'
+                match:   false
+                message: 'Votre nom ne doit contenir que des lettres.'
+            - Length:
+                max: 50
+                min: 2
+                minMessage: La valeur du nom est trop courte. Votre nom doit contenir au moins {{ limit }} caractères.
+                maxMessage: La valeur du nom est trop longue. Votre nom doit contenir moins de {{ limit }} caractères.
+        firstname:
+            - NotBlank:
+                message: 'Ce champ ne doit pas être vide.'
+            - Regex:
+                pattern: '/\d/'
+                match:   false
+                message: 'Votre nom ne doit contenir que des lettres.'
+            - Length:
+                max: 50
+                min: 2
+                minMessage: La valeur du nom est trop courte. Votre nom doit contenir au moins {{ limit }} caractères.
+                maxMessage: La valeur du nom est trop longue. Votre nom doit contenir moins de {{ limit }} caractères.
+        dateofbirth:
+            - NotBlank:
+                message: 'Ce champ ne doit pas être vide.'
+            - DateTime: ~
+            - App\Validator\Constraints\ContainsMajorAge:
+                message: 'Vous devez avoir 18 ans pour commander.'
+        email:
+            - NotBlank:
+                message: 'Ce champ ne doit pas être vide.'
+            - Email:
+                message: Cet email {{ value }} n'est pas un email conforme.
+                checkMX: true

@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+{#{% form_theme form 'forms/forms_errors.html.twig' %}#}
+{% block title %}Musée du Louvre - Réserver vos tickets{% endblock %}
+
+{% block body %}
+    <div class="container form-style">
+        <div class="row">
+            <p>Madame/Monsieur {{ usersdto.name }} {{ usersdto.firstname }} ,<p>
+                <p>Votre paiement de {{ totalPrice }} € a été validé. Vous recevrez prochainement un mail de confirmation contenant l'ensemble de vos tickets à l'adresse suivante {{ usersdto.name }}.</p>
+        </div>
+    </div>
+{% endblock %}

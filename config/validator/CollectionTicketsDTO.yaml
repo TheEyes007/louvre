@@ -1,0 +1,4 @@
+App\Domain\DTO\CollectionTicketsDTO:
+     properties:
+            tickets:
+                - Valid: ~

@@ -11,24 +11,18 @@ namespace Tests\Service;
 use App\Service\PriceCalculator;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Class PriceCalculatorTest
+ * @package Tests\Service
+ */
 class PriceCalculatorTest extends TestCase
 {
-    public function getAgeTest()
-    {
-        $dateofbirth = '02/12/1983';
-        $usersService = new PriceCalculator();
-        $age = $usersService->getAge($dateofbirth);
-        $this->assertSame(35,$age);
-    }
 
-    /*
-    public function getTarifTest()
+    /**
+     * Compare value Price
+     */
+    public function testGetPrice()
     {
-        $tarif = 'Tarif normal';
-        $age = 85;
-        $usersService = new PriceCalculator();
-        $age = $usersService->getTarif($tarif);
-        $this->assertSame('Tarif Normal',$tarif);
+
     }
-    */
 }

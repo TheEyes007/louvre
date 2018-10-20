@@ -39,25 +39,25 @@
                     <p>Nombre de tickets commandés : <b class="nb-tickets-content">Aucun ticket commandé</b></p>
                     <p>Prix total des tickets : <b class="price-tickets-content">0€</b></p>
                 </div>
-                <div id="modal1" class="modal">
-                    {{ form_start(form) }}
-                    <div class="modal-content">
-                        <h6>Saisir votre ticket</h6>
-                        <div id="tickets-id-form" class="tickets" data-prototype="{{ form_widget(form.tickets.vars.prototype)|e }}">
+
+                {{ form_start(form) }}
+                    <div id="modal1" class="modal">
+                        <div class="modal-content">
+                            <h6>Saisir votre ticket</h6>
+                            <div id="tickets-id-form" class="tickets" data-prototype="{{ form_widget(form.tickets.vars.prototype)|e }}">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button id="close-form" class="waves-effect waves-green btn-flat" type="button">Fermer</button>
+                            <button id="cancel-form" class="waves-effect waves-green btn-flat" type="reset">Annuler</button>
+                            <button id="validate-form" class="waves-effect waves-green btn-flat" type="button">Valider</button>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button id="close-form" class="waves-effect waves-green btn-flat" type="button">Fermer</button>
-                        <button id="cancel-form" class="waves-effect waves-green btn-flat" type="reset">Annuler</button>
-                        <button id="validate-form" class="waves-effect waves-green btn-flat" type="button">Valider</button>
-                    </div>
-                    {{ form_end(form) }}
-                </div>
                     <div class="col s12 m12">
-                        <a class="waves-effect orange waves-light btn" href="/accounts"><i class="material-icons left">arrow_back</i>Retour</a>
-                        <button class="waves-effect green waves-light btn right" type="submit"><i class="material-icons right">arrow_forward</i>Suivant</button>
+                            <a class="waves-effect orange waves-light btn" href="/accounts"><i class="material-icons left">arrow_back</i>Retour</a>
+                            <button class="waves-effect green waves-light btn right" type="submit"><i class="material-icons right">arrow_forward</i>Suivant</button>
                     </div>
+                {{ form_end(form) }}
             </div>
-            </div>
-        </div>
+    </div>
 {% endblock %}

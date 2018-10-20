@@ -36,3 +36,5 @@ App\Domain\DTO\UsersDTO:
             - Email:
                 message: Cet email {{ value }} n'est pas un email conforme.
                 checkMX: true
+        tickets:
+            - Valid: ~

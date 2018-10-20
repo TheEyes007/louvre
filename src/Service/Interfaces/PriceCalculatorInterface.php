@@ -14,21 +14,9 @@ namespace App\Service\Interfaces;
  */
 interface PriceCalculatorInterface
 {
-    /**
-     * @param $dateofbirth
-     * @return mixed
-     */
-    public function getAge($dateofbirth);
 
     /**
-     * @param $dateofbooking
      * @return mixed
      */
-    public function getTarif($dateofbirth,$tarif);
-
-    /**
-     * @param $tarif
-     * @return mixed
-     */
-    public function getPrice($tarif);
+    public function getPrice();
 }

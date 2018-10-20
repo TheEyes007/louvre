@@ -2,58 +2,59 @@
 /**
  * Created by PhpStorm.
  * User: mvibert
- * Date: 05/09/2018
- * Time: 20:20
+ * Date: 08/10/2018
+ * Time: 19:00
  */
 
 namespace App\Service;
 
 use App\Service\Interfaces\PriceCalculatorInterface;
 
+/**
+ * Class PriceCalculator
+ * @package App\Service
+ */
 class PriceCalculator implements PriceCalculatorInterface
 {
     /**
-     * @param $dateofbirth
-     * @return mixed
+     * @var $tarif string
      */
-    public function getAge($dateofbirth)
-    {
-        $today = new \DateTime();
-        $dateofbirth = new \DateTime($dateofbirth);
-        $age = $dateofbirth->diff($today);
-        return $age->y;
+    private $tarif;
 
-        //Tester un argument qui n'a pas le bon type/date au mauvais format
+    /**
+     * @return int
+     */
+    public function getPrice()
+    {
+        $tarif = $this->tarif;
+
+        switch ($tarif) {
+            case 'Tarif Normal':
+                return 16;
+                break;
+            case 'Demi-Journée':
+                return 8;
+                break;
+            case 'Tarif Réduit':
+                return 10;
+                break;
+            case 'Tarif Gratuit':
+                return 0;
+                break;
+            case 'Tarif Enfant':
+                return 8;
+                break;
+            case 'Tarif Senior':
+                return 12;
+                break;
+        }
     }
 
     /**
-     * @param $dateofbooking
-     * @return mixed
+     * PriceCalculator constructor.
      */
-    public function getTarif($dateofbirth,$tarif)
+    public function __construct($tarif)
     {
-        /*
-            if ($dateofbirth > 59) {
-                $tarif = 'Tarif Senior';
-            } elseif ($dateofbirth > 3 AND $dateofbirth < 12) {
-                $tarif = 'Tarif Enfant';
-            } elseif ($dateofbirth < 4) {
-                $tarif = 'Tarif Gratuit';
-            } else {
-                $tarif = 'Tarif Normal';
-            }
-
-            return $tarif;
-        */
-    }
-
-
-        /**
-     * @param $tarif
-     * @return mixed
-     */
-    public function getPrice($tarif)
-    {
-        // TODO: Implement getPrice() method.
+        $this->tarif = $tarif;
     }
 }

@@ -2,49 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3615ee2-afbc-413e-ba95-46801683d4bb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/validator/TicketsDTO.yaml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/component/DatePicker.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/component/FormCollectionType.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/component/Init.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/component/Ticket.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/component/TicketsContentHTML.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/component/Validator.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Controller/Interfaces/AccountsInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Controller/Interfaces/CommandInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Controller/Interfaces/HomepageInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Domain/DTO/CollectionTicketsDTO.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Domain/DTO/Interfaces/TicketsDTOInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Domain/DTO/Interfaces/UsersDTOInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Domain/DTO/TicketsDTO.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Domain/DTO/UsersDTO.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Form/CollectionTicketsType.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Service/Interfaces/PriceCalculatorInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Service/PriceCalculator.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/Service/PriceCalculatorTest.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/Service/doc.md" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config/routes.yaml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/DTO/usersParams.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Entity/.gitignore" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/config/validator/validator.yaml" afterPath="$PROJECT_DIR$/config/validator/UsersDTO.yaml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Controller/accountsController.php" afterPath="$PROJECT_DIR$/src/Controller/AccountsController.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Controller/commandController.php" afterPath="$PROJECT_DIR$/src/Controller/CommandController.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Controller/homepageController.php" afterPath="$PROJECT_DIR$/src/Controller/HomepageController.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Form/AccountsType.php" afterPath="$PROJECT_DIR$/src/Form/TicketsType.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Form/CommandsType.php" afterPath="$PROJECT_DIR$/src/Form/UsersType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/validator/CollectionTicketsDTO.yaml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Controller/Interfaces/PaiementInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Controller/Interfaces/ValidationInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Controller/PaiementController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Controller/ValidationController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Domain/Entity/Tickets.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Service/CheckAge.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Service/CheckTarif.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Service/Interfaces/CheckAgeInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Service/Interfaces/CheckTarifInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Service/Interfaces/SendMailerInterface.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Service/SendMailer.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/emails/registration.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/reservation/paiement.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/reservation/validation.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/Form/TicketsTypeTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/Service/CheckAgeTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/Service/CheckTarifTest.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tests/Service/doc.md" afterPath="$PROJECT_DIR$/doc.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/louvre.iml" afterPath="$PROJECT_DIR$/.idea/louvre.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/packages/doctrine.yaml" afterPath="$PROJECT_DIR$/config/packages/doctrine.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/services.yaml" afterPath="$PROJECT_DIR$/config/services.yaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/validator/TicketsDTO.yaml" afterPath="$PROJECT_DIR$/config/validator/TicketsDTO.yaml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/validator/UsersDTO.yaml" afterPath="$PROJECT_DIR$/config/validator/UsersDTO.yaml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style.css" afterPath="$PROJECT_DIR$/public/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/main.js" afterPath="$PROJECT_DIR$/public/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Validator/Constraints/ContainsMajorAge.php" afterPath="$PROJECT_DIR$/src/Validator/Constraints/ContainsMajorAge.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/CommandController.php" afterPath="$PROJECT_DIR$/src/Controller/CommandController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/Interfaces/CommandInterface.php" afterPath="$PROJECT_DIR$/src/Controller/Interfaces/CommandInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Service/Interfaces/PriceCalculatorInterface.php" afterPath="$PROJECT_DIR$/src/Service/Interfaces/PriceCalculatorInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Service/PriceCalculator.php" afterPath="$PROJECT_DIR$/src/Service/PriceCalculator.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/symfony.lock" afterPath="$PROJECT_DIR$/symfony.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html.twig" afterPath="$PROJECT_DIR$/templates/base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/reservation/accounts.html.twig" afterPath="$PROJECT_DIR$/templates/reservation/accounts.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/reservation/commands.html.twig" afterPath="$PROJECT_DIR$/templates/reservation/commands.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/site/index.html.twig" afterPath="$PROJECT_DIR$/templates/site/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/Service/PriceCalculatorTest.php" afterPath="$PROJECT_DIR$/tests/Service/PriceCalculatorTest.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -57,24 +50,12 @@
     <favorites_list name="louvre" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/main.js">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name=".env" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="117" column="50" lean-forward="false" selection-start-line="117" selection-start-column="50" selection-end-line="117" selection-end-column="50" />
-              <folding>
-                <element signature="e#0#51#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CommandController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Controller/CommandController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1155">
-              <caret line="68" column="0" lean-forward="true" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+            <state relative-caret-position="289">
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -108,6 +89,11 @@
       <find>format</find>
       <find>tickets-in</find>
       <find>ticket</find>
+      <find>Check</find>
+      <find>CheckTarif</find>
+      <find>element.</find>
+      <find>stripe</find>
+      <find>pk</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -116,42 +102,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Controller/Interfaces/AccountsInterface.php" />
-        <option value="$PROJECT_DIR$/src/Controller/Interfaces/CommandInterface.php" />
-        <option value="$PROJECT_DIR$/src/Controller/Interfaces/HomepageInterface.php" />
-        <option value="$PROJECT_DIR$/src/DTO/Interfaces/TicketsDTOInterface.php" />
-        <option value="$PROJECT_DIR$/src/DTO/Interfaces/UsersDTOInterface.php" />
-        <option value="$PROJECT_DIR$/src/DTO/Interfaces/UsersServiceInterface.php" />
-        <option value="$PROJECT_DIR$/src/Service/UsersService.php" />
-        <option value="$PROJECT_DIR$/src/Service/PriceCalculatorService.php" />
-        <option value="$PROJECT_DIR$/src/Service/Interfaces/UsersServiceInterface.php" />
-        <option value="$PROJECT_DIR$/tests/Service/UsersServiceTest.php" />
-        <option value="$PROJECT_DIR$/src/Controller/AccountsController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/HomepageController.php" />
-        <option value="$PROJECT_DIR$/src/DTO/UsersDTO.php" />
-        <option value="$PROJECT_DIR$/src/DTO/TicketsDTO.php" />
-        <option value="$PROJECT_DIR$/tests/Service/tzqr.php" />
-        <option value="$PROJECT_DIR$/src/Domain/DTO/Interfaces/UsersDTOInterface.php" />
-        <option value="$PROJECT_DIR$/src/Domain/DTO/Interfaces/TicketsDTOInterface.php" />
-        <option value="$PROJECT_DIR$/src/Domain/DTO/CollectionTicketsDTO.php" />
-        <option value="$PROJECT_DIR$/src/Domain/DTO/UsersDTO.php" />
-        <option value="$PROJECT_DIR$/src/Domain/DTO/TicketsDTO.php" />
-        <option value="$PROJECT_DIR$/src/Form/UsersType.php" />
-        <option value="$PROJECT_DIR$/src/Form/TicketsType.php" />
-        <option value="$PROJECT_DIR$/src/Form/CollectionTicketsType.php" />
-        <option value="$PROJECT_DIR$/config/validator/UsersDTO.yaml" />
-        <option value="$PROJECT_DIR$/config/validator/TicketsDTO.yaml" />
-        <option value="$PROJECT_DIR$/tests/Service/doc.md" />
-        <option value="$PROJECT_DIR$/src/Service/PriceCalculator.php" />
-        <option value="$PROJECT_DIR$/src/Service/Interfaces/PriceCalculatorInterface.php" />
-        <option value="$PROJECT_DIR$/tests/Service/PriceCalculatorTest.php" />
-        <option value="$PROJECT_DIR$/public/js/main_bak.js" />
-        <option value="$PROJECT_DIR$/public/js/component/form.js" />
         <option value="$PROJECT_DIR$/public/js/main_new.js" />
         <option value="$PROJECT_DIR$/public/js/component/ContentHTML.js" />
         <option value="$PROJECT_DIR$/public/js/core_function.js" />
         <option value="$PROJECT_DIR$/public/js/component/Tickets.js" />
-        <option value="$PROJECT_DIR$/templates/base.html.twig" />
         <option value="$PROJECT_DIR$/public/js/actionsTickets/newTickets.js" />
         <option value="$PROJECT_DIR$/public/js/component/Form.js" />
         <option value="$PROJECT_DIR$/src/Validator/Constraints/ContainsMajorAge.php" />
@@ -160,13 +114,45 @@
         <option value="$PROJECT_DIR$/public/js/component/DatePicker.js" />
         <option value="$PROJECT_DIR$/public/js/component/FormCollectionType.js" />
         <option value="$PROJECT_DIR$/public/js/main_copy.js" />
-        <option value="$PROJECT_DIR$/public/css/style.css" />
-        <option value="$PROJECT_DIR$/templates/reservation/commands.html.twig" />
         <option value="$PROJECT_DIR$/public/js/component/Ticket.js" />
         <option value="$PROJECT_DIR$/public/js/component/TicketsContentHTML.js" />
         <option value="$PROJECT_DIR$/public/js/component/PriceCalculator.js" />
-        <option value="$PROJECT_DIR$/public/js/main.js" />
+        <option value="$PROJECT_DIR$/src/Controller/Interfaces/ValidationInterface.php" />
+        <option value="$PROJECT_DIR$/src/Controller/Interfaces/CommandInterface.php" />
+        <option value="$PROJECT_DIR$/src/Form/CollectionTicketsType.php" />
+        <option value="$PROJECT_DIR$/config/validator/CollectionTicketsDTO.yaml" />
+        <option value="$PROJECT_DIR$/tests/Form/CollectionTicketsTypeTest.php" />
+        <option value="$PROJECT_DIR$/config/validator/UsersDTO.yaml" />
+        <option value="$PROJECT_DIR$/doc.md" />
+        <option value="$PROJECT_DIR$/config/validator/TicketsDTO.yaml" />
+        <option value="$PROJECT_DIR$/src/Service/Interfaces/CheckTarifInterface.php" />
+        <option value="$PROJECT_DIR$/src/Service/Interfaces/CheckAgeInterface.php" />
+        <option value="$PROJECT_DIR$/src/Service/Interfaces/PriceCalculatorInterface.php" />
+        <option value="$PROJECT_DIR$/tests/Form/TicketsTypeTest.php" />
+        <option value="$PROJECT_DIR$/src/Service/CheckTarif.php" />
+        <option value="$PROJECT_DIR$/tests/Service/CheckAgeTest.php" />
+        <option value="$PROJECT_DIR$/tests/Service/CheckTarifTest.php" />
+        <option value="$PROJECT_DIR$/tests/Service/PriceCalculatorTest.php" />
+        <option value="$PROJECT_DIR$/src/Service/PriceCalculator.php" />
+        <option value="$PROJECT_DIR$/templates/reservation/commands.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/CommandController.php" />
+        <option value="$PROJECT_DIR$/src/Service/CheckAge.php" />
+        <option value="$PROJECT_DIR$/src/Controller/ValidationController.php" />
+        <option value="$PROJECT_DIR$/public/js/component/Stripe.js" />
+        <option value="$PROJECT_DIR$/public/css/style.css" />
+        <option value="$PROJECT_DIR$/templates/base.html.twig" />
+        <option value="$PROJECT_DIR$/public/js/stripe.js" />
+        <option value="$PROJECT_DIR$/templates/reservation/paiement.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/Interfaces/PaiementInterface.php" />
+        <option value="$PROJECT_DIR$/templates/reservation/validation.html.twig" />
+        <option value="$PROJECT_DIR$/templates/site/index.html.twig" />
+        <option value="$PROJECT_DIR$/public/js/main.js" />
+        <option value="$PROJECT_DIR$/src/Service/Interfaces/SendMailerInterface.php" />
+        <option value="$PROJECT_DIR$/templates/emails/registration.html.twig" />
+        <option value="$PROJECT_DIR$/src/Service/SendMailer.php" />
+        <option value="$PROJECT_DIR$/src/Controller/PaiementController.php" />
+        <option value="$PROJECT_DIR$/config/packages/swiftmailer.yaml" />
+        <option value="$PROJECT_DIR$/.env" />
       </list>
     </option>
   </component>
@@ -178,10 +164,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="472" />
-    <option name="y" value="4" />
-    <option name="width" value="960" />
-    <option name="height" value="874" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -215,24 +201,24 @@
               <item name="www" type="b2602c69:ProjectViewProjectNode" />
               <item name="www" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="packages" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="www" type="b2602c69:ProjectViewProjectNode" />
+              <item name="www" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="routes" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="www" type="b2602c69:ProjectViewProjectNode" />
+              <item name="www" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="validator" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="www" type="b2602c69:ProjectViewProjectNode" />
               <item name="www" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="www" type="b2602c69:ProjectViewProjectNode" />
-              <item name="www" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="www" type="b2602c69:ProjectViewProjectNode" />
-              <item name="www" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="img" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="www" type="b2602c69:ProjectViewProjectNode" />
@@ -282,25 +268,31 @@
               <item name="www" type="b2602c69:ProjectViewProjectNode" />
               <item name="www" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Form" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Service" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="www" type="b2602c69:ProjectViewProjectNode" />
               <item name="www" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Validator" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="www" type="b2602c69:ProjectViewProjectNode" />
-              <item name="www" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Validator" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Constraints" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Service" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Interfaces" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="www" type="b2602c69:ProjectViewProjectNode" />
               <item name="www" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="www" type="b2602c69:ProjectViewProjectNode" />
+              <item name="www" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="emails" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="www" type="b2602c69:ProjectViewProjectNode" />
+              <item name="www" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="forms" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="www" type="b2602c69:ProjectViewProjectNode" />
@@ -311,20 +303,25 @@
             <path>
               <item name="www" type="b2602c69:ProjectViewProjectNode" />
               <item name="www" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="tests" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="site" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="www" type="b2602c69:ProjectViewProjectNode" />
               <item name="www" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="tests" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Service" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="var" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="www" type="b2602c69:ProjectViewProjectNode" />
+              <item name="www" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -337,18 +334,18 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mvibert\Documents\Docker\lapp\www" />
       <recent name="C:\wamp64\www\louvre\src\Domain" />
       <recent name="C:\wamp64\www\louvre\src\Service\Interfaces" />
       <recent name="C:\wamp64\www\louvre\src\Controller" />
       <recent name="C:\wamp64\www\louvre\public\js" />
-      <recent name="C:\wamp64\www\louvre\src" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\mvibert\Documents\Docker\lapp\www\public\js\component" />
-      <recent name="C:\Users\mvibert\Documents\Docker\lapp\www\public\js" />
-      <recent name="C:\wamp64\www\louvre\tests\Service" />
-      <recent name="C:\wamp64\www\louvre\src\DTO" />
-      <recent name="C:\wamp64\www\louvre\src\Interfaces" />
+      <recent name="C:\Users\Matthieu\Documents\Docker\lapp\www\templates\emails" />
+      <recent name="C:\Users\Matthieu\Documents\Docker\lapp\www\templates\reservation" />
+      <recent name="C:\Users\Matthieu\Documents\Docker\lapp\www\public\js" />
+      <recent name="C:\Users\mvibert\Documents\Docker\lapp\www\src\Controller\Interfaces" />
+      <recent name="C:\Users\mvibert\Documents\Docker\lapp\www\src\Controller" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -442,27 +439,54 @@
       <workItem from="1538391996909" duration="1654000" />
       <workItem from="1538411387819" duration="1307000" />
       <workItem from="1538415522030" duration="5595000" />
-      <workItem from="1538477812409" duration="1772000" />
+      <workItem from="1538477812409" duration="3933000" />
+      <workItem from="1538481792444" duration="187000" />
+      <workItem from="1538485308452" duration="35000" />
+      <workItem from="1538564455301" duration="3975000" />
+      <workItem from="1538579805773" duration="12000" />
+      <workItem from="1538650386165" duration="4195000" />
+      <workItem from="1538669578282" duration="1551000" />
+      <workItem from="1538737309032" duration="4088000" />
+      <workItem from="1538745220728" duration="16000" />
+      <workItem from="1538995600008" duration="4437000" />
+      <workItem from="1539003113853" duration="11000" />
+      <workItem from="1539007423142" duration="4000" />
+      <workItem from="1539017402859" duration="2461000" />
+      <workItem from="1539022943157" duration="10333000" />
+      <workItem from="1539069015595" duration="8000" />
+      <workItem from="1539075171859" duration="632000" />
+      <workItem from="1539080760164" duration="3878000" />
+      <workItem from="1539190574789" duration="4964000" />
+      <workItem from="1539271315940" duration="3212000" />
+      <workItem from="1539354383493" duration="6000" />
+      <workItem from="1539357458144" duration="1811000" />
+      <workItem from="1539359629643" duration="523000" />
+      <workItem from="1539689739530" duration="1462000" />
+      <workItem from="1539775414809" duration="8491000" />
+      <workItem from="1539860712689" duration="909000" />
+      <workItem from="1539862467367" duration="1714000" />
+      <workItem from="1539883592309" duration="8860000" />
+      <workItem from="1539946939549" duration="3201000" />
+      <workItem from="1539965062764" duration="5318000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="331514000" />
+    <option name="totallyTimeSpent" value="409969000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17518637" sideWeight="0.49339935" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3909224" sideWeight="0.49339935" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2580288" sideWeight="0.5425985" order="7" side_tool="true" content_ui="tabs" x="1941" y="397" width="1878" height="238" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.06929134" sideWeight="0.5102489" order="7" side_tool="true" content_ui="tabs" x="1941" y="397" width="1878" height="238" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2580288" sideWeight="0.45740148" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.051968504" sideWeight="0.41434845" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3397231" sideWeight="0.5066007" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -470,7 +494,8 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973376" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28524947" sideWeight="0.4978701" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.06771654" sideWeight="0.4897511" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -482,305 +507,388 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/Controller/ValidationController.php</url>
+          <line>11</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/DTO/AccountsDTO.php" />
-    <entry file="file://$PROJECT_DIR$/config/routes.yaml" />
-    <entry file="file://$PROJECT_DIR$/config/routes/annotations.yaml">
+    <entry file="file://$PROJECT_DIR$/src/Controller/Interfaces/ValidationInterface.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="210">
+          <caret line="15" column="29" lean-forward="false" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/AccountController.php" />
-    <entry file="file://$PROJECT_DIR$/src/Interfaces/CollectionTicketsDTOInterface.php" />
-    <entry file="file://$PROJECT_DIR$/src/Controller/Interfaces/TicketsDTOInterface.php" />
-    <entry file="file://$PROJECT_DIR$/src/Controller/Interfaces/UsersDTOInterface.php" />
-    <entry file="file://$PROJECT_DIR$/src/Controller/Interfaces/UsersServiceInterface.php" />
-    <entry file="file://$PROJECT_DIR$/src/DTO/Interfaces/CommandInterface.php" />
+    <entry file="file://$PROJECT_DIR$/src/Service/CheckAge.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="33" column="25" lean-forward="true" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Service/CheckTarifTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1491">
+          <caret line="77" column="30" lean-forward="false" selection-start-line="77" selection-start-column="30" selection-end-line="77" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Service/CheckAgeTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="28" column="28" lean-forward="false" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Form/TicketsTypeTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="777">
+          <caret line="37" column="1" lean-forward="false" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Service/PriceCalculatorTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="26" lean-forward="false" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/Interfaces/AccountsInterface.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Interfaces/CommandInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="21" column="20" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+        <state relative-caret-position="126">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="62" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/Interfaces/HomepageInterface.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
+        <state relative-caret-position="63">
           <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/HomepageController.php">
+    <entry file="file://$PROJECT_DIR$/src/Controller/Interfaces/CommandInterface.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="38" column="50" lean-forward="false" selection-start-line="38" selection-start-column="2" selection-end-line="38" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Domain/DTO/Interfaces/TicketsDTOInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Domain/DTO/Interfaces/UsersDTOInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Service/PriceCalculator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="32" column="48" lean-forward="false" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Service/Interfaces/PriceCalculatorInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="26" column="48" lean-forward="false" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Service/doc.md">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="19" lean-forward="false" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="102">
-            <caret line="6" column="0" lean-forward="false" selection-start-line="2" selection-start-column="11" selection-end-line="6" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/main_bak.js" />
-    <entry file="file://$PROJECT_DIR$/tests/Service/PriceCalculatorTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="32" column="6" lean-forward="false" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/collectionType.js" />
-    <entry file="file://$PROJECT_DIR$/public/js/core_function.js" />
-    <entry file="file://$PROJECT_DIR$/public/js/main_new.js" />
-    <entry file="file://$PROJECT_DIR$/public/js/actionsTickets/newTickets.js" />
-    <entry file="file://$PROJECT_DIR$/src/Form/CollectionTicketsType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="33" column="7" lean-forward="false" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Domain/DTO/TicketsDTO.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-734">
-          <caret line="10" column="15" lean-forward="false" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Domain/DTO/CollectionTicketsDTO.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/validator/TicketsDTO.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="17" column="20" lean-forward="false" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/validator/UsersDTO.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="30" column="57" lean-forward="true" selection-start-line="30" selection-start-column="15" selection-end-line="30" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Validator/Constraints/ContainsMajorAge.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="14" column="91" lean-forward="false" selection-start-line="14" selection-start-column="91" selection-end-line="14" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Validator/Constraints/ContainsMajorAgeValidator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="60" column="36" lean-forward="false" selection-start-line="60" selection-start-column="30" selection-end-line="60" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Domain/DTO/UsersDTO.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="15" lean-forward="false" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/TicketsType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-609">
-          <caret line="10" column="15" lean-forward="false" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/UsersType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-168">
-          <caret line="10" column="15" lean-forward="false" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/reservation/accounts.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="53" lean-forward="false" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/component/DatePicker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="125" column="35" lean-forward="false" selection-start-line="125" selection-start-column="35" selection-end-line="125" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/component/Init.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="87" column="85" lean-forward="false" selection-start-line="87" selection-start-column="85" selection-end-line="87" selection-end-column="85" />
+        <state relative-caret-position="483">
+          <caret line="28" column="31" lean-forward="false" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/component/Validator.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
+        <state relative-caret-position="408">
           <caret line="24" column="32" lean-forward="false" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/img/tickets.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/main_copy.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3087">
-          <caret line="147" column="0" lean-forward="false" selection-start-line="147" selection-start-column="0" selection-end-line="149" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="113" column="1" lean-forward="false" selection-start-line="113" selection-start-column="1" selection-end-line="113" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/component/Ticket.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="63" column="9" lean-forward="false" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/reservation/commands.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="24" column="121" lean-forward="false" selection-start-line="24" selection-start-column="107" selection-end-line="24" selection-end-column="121" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/component/FormCollectionType.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="22" column="28" lean-forward="false" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+        <state relative-caret-position="459">
+          <caret line="27" column="13" lean-forward="false" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/component/Init.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1479">
+          <caret line="87" column="85" lean-forward="false" selection-start-line="87" selection-start-column="85" selection-end-line="87" selection-end-column="85" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/component/TicketsContentHTML.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
+        <state relative-caret-position="163">
           <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/component/Ticket.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/component/PriceCalculator.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
+        <state relative-caret-position="136">
           <caret line="8" column="52" lean-forward="false" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/main.js">
+    <entry file="file://$PROJECT_DIR$/public/js/component/DatePicker.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="117" column="50" lean-forward="false" selection-start-line="117" selection-start-column="50" selection-end-line="117" selection-end-column="50" />
+        <state relative-caret-position="136">
+          <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/component/Stripe.js" />
+    <entry file="file://$PROJECT_DIR$/public/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4199">
+          <caret line="247" column="1" lean-forward="false" selection-start-line="247" selection-start-column="1" selection-end-line="247" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DOMCore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="268" column="0" lean-forward="false" selection-start-line="268" selection-start-column="0" selection-end-line="268" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/stripe.js" />
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/block.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="237" column="16" lean-forward="false" selection-start-line="237" selection-start-column="16" selection-end-line="237" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/HomepageController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="38" column="48" lean-forward="false" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="48" />
           <folding>
-            <element signature="e#0#51#0" expanded="true" />
+            <element signature="e#118#166#0#PHP" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/reservation/paiement.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="19" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/AccountsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="80" selection-end-column="9" />
-          <folding>
-            <element signature="e#118#166#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Interfaces/ValidationInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="-802">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="62" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/CommandController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1155">
-          <caret line="68" column="0" lean-forward="true" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+        <state relative-caret-position="119">
+          <caret line="95" column="28" lean-forward="false" selection-start-line="95" selection-start-column="28" selection-end-line="95" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/Core/Core_d.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="299" column="9" lean-forward="false" selection-start-line="299" selection-start-column="9" selection-end-line="299" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/reservation/validation.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="8" column="79" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/site/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="42" lean-forward="false" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="61" column="40" lean-forward="false" selection-start-line="61" selection-start-column="40" selection-end-line="61" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="149" column="63" lean-forward="false" selection-start-line="149" selection-start-column="63" selection-end-line="149" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Interfaces/PaiementInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="14" column="69" lean-forward="false" selection-start-line="14" selection-start-column="69" selection-end-line="14" selection-end-column="69" />
+          <folding>
+            <element signature="e#129#174#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/reservation/commands.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="39" column="26" lean-forward="false" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/reservation/accounts.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/forms/forms_errors.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="85" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Service/Interfaces/PriceCalculatorInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Service/Interfaces/SendMailerInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Domain/DTO/UsersDTO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-153">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/ValidationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="76" column="0" lean-forward="true" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding>
+            <element signature="e#119#169#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/emails/registration.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="7" lean-forward="false" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Service/SendMailer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding>
+            <element signature="e#116#162#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/PaiementController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="109" column="41" lean-forward="false" selection-start-line="109" selection-start-column="41" selection-end-line="109" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/dev/swiftmailer.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/framework.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/routing.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/security_checker.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/sensio_framework_extra.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/swiftmailer.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/twig.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/packages/validator.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes/annotations.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>

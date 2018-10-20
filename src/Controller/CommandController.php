@@ -10,6 +10,9 @@ namespace App\Controller;
 
 use App\Controller\Interfaces\CommandInterface;
 use App\Form\CollectionTicketsType;
+use App\Service\CheckAge;
+use App\Service\CheckTarif;
+use App\Service\PriceCalculator;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -17,6 +20,7 @@ use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Form\FormFactoryInterface;
 use Twig\Environment;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Intl\Intl;
 
 /**
  * Class accountsController
@@ -38,6 +42,11 @@ class CommandController implements CommandInterface
      * @var RouterInterface
      */
     private $router;
+
+    /**
+     * @var SessionInterface
+     */
+    private $session;
 
     /**
      * @param Environment $twig
@@ -68,7 +77,43 @@ class CommandController implements CommandInterface
          }
 
          $form = $this->formFactory->create(CollectionTicketsType::class, $user)->handleRequest($request);
-         
+
+         if ($form->isSubmitted() && $form->isValid()) {
+
+             $request->getSession()->set('user', $form->getData());
+
+             foreach ($user->tickets as $value) {
+                 $age = new CheckAge($value->dateofbirth->format('d/m/Y'));
+                 $age = $age->getAge();
+                 $tarif = new CheckTarif($age, $value->tarif);
+                 $tarif = $tarif->getTarif();
+                 $price = new PriceCalculator($tarif);
+                 $price = $price->getPrice();
+                 $countryName = Intl::getRegionBundle()->getCountryName($value->country);
+                 $value->tarif = $tarif;
+                 $value->age = $age;
+                 $value->price = $price;
+                 // From code iso generate country name
+                 $value->country = $countryName;
+             }
+
+             return new RedirectResponse($this->router->generate('validation'));
+         }
+
          return new Response($this->twig->render('reservation/commands.html.twig',array('usersdto' => $user, 'form' => $form->createView())));
      }
+
+    /**
+     * Matches /cancelcommand exactly
+     *
+     * @Route("/cancelcommand", methods={"GET"}, name="cancelcommand")
+     * @param Request $request
+     * @return RedirectResponse|Response
+     */
+    public function cancelCommand(Request $request)
+    {
+        $requestDTO = $request->getSession()->get('user');
+        $requestDTO->tickets = [];
+        return new RedirectResponse($this->router->generate('command'));
+    }
 }

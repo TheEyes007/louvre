@@ -3,6 +3,11 @@
 {% block body %}
     <div class="container">
         <div class="row">
+            {% for message in app.flashes('success') %}
+                <div class="card-panel green darken-1 lighten-4 white-text">
+                    {{ message }}
+                </div>
+            {% endfor %}
             <div class="col s12 m6">
                 <div class="card small">
                     <div class="card-image">

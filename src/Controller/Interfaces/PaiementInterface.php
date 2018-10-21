@@ -8,11 +8,11 @@
 
 namespace App\Controller\Interfaces;
 
+use App\Service\SendMailer;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\RouterInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Twig\Environment;
-use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
 
 interface PaiementInterface
 {
@@ -26,7 +26,8 @@ interface PaiementInterface
         Environment $twig,
         EntityManagerInterface $em,
         RouterInterface $router,
-        FlashBagInterface $flash
+        SendMailer $sendMailer,
+        string $stripeToken
     );
 
     /**

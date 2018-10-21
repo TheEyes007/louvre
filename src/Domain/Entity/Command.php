@@ -11,10 +11,10 @@ namespace App\Domain\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Table(name="tickets")
- * @ORM\Entity(repositoryClass="App\Domain\Repository\TicketsRepository")
+ * @ORM\Table(name="command")
+ * @ORM\Entity(repositoryClass="App\Domain\Repository\CommandRepository")
  */
-class Tickets
+class Command
 {
     /**
      * @ORM\Id
@@ -22,12 +22,6 @@ class Tickets
      * @ORM\Column(type="integer")
      */
     private $id;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="Command")
-     * @ORM\JoinColumn(name="address_id", referencedColumnName="id")
-     */
-    private $commandid;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -45,14 +39,29 @@ class Tickets
     private $dateofbirth;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=255)
      */
-    private $tarif;
+    private $email;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="boolean")
      */
-    private $dateofbooking;
+    private $status;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $price;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $commandNumber;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $emailToken;
 
     //GETTER AND SETTER
 
@@ -92,33 +101,53 @@ class Tickets
     }
 
     /**
-     * Get tarif
+     * Get email
      *
      * @return string
      */
-    public function getTarif()
+    public function getEmail()
     {
-        return $this->tarif;
+        return $this->email;
     }
 
     /**
-     * Get dateofbooking
+     * Get status
      *
-     * @return \DateTime
+     * @return bool
      */
-    public function getDateofbooking()
+    public function getStatus()
     {
-        return $this->dateofbooking;
+        return $this->status;
     }
 
     /**
-     * Get commandid
+     * Get price
      *
      * @return integer
      */
-    public function getCommandid()
+    public function getPrice()
     {
-        return $this->commandid;
+        return $this->price;
+    }
+
+    /**
+     * Get commandNumber
+     *
+     * @return string
+     */
+    public function getCommandnumber()
+    {
+        return $this->commandNumber;
+    }
+
+    /**
+     * Get emailToken
+     *
+     * @return string
+     */
+    public function getEmailtoken()
+    {
+        return $this->emailToken;
     }
 
     /**
@@ -126,7 +155,7 @@ class Tickets
      *
      * @param string $name
      *
-     * @return tickets
+     * @return Command
      */
     public function setName($name)
     {
@@ -140,7 +169,7 @@ class Tickets
      *
      * @param string $firstname
      *
-     * @return tickets
+     * @return Command
      */
     public function setFirstname($firstname)
     {
@@ -154,7 +183,7 @@ class Tickets
      *
      * @param string $dateofbirth
      *
-     * @return tickets
+     * @return Command
      */
     public function setDateofbirth($dateofbirth)
     {
@@ -164,43 +193,71 @@ class Tickets
     }
 
     /**
-     * Set tarif
+     * Set email
      *
-     * @param string $tarif
+     * @param string $email
      *
-     * @return tickets
+     * @return Command
      */
-    public function setTarif($tarif)
+    public function setEmail($email)
     {
-        $this->tarif = $tarif;
+        $this->email = $email;
 
         return $this;
     }
 
     /**
-     * Set dateofbooking
+     * Set status
      *
-     * @param string $dateofbooking
+     * @param string $status
      *
-     * @return tickets
+     * @return Command
      */
-    public function setDateofbooking($dateofbooking)
+    public function setStatus($status)
     {
-        $this->dateofbooking = $dateofbooking;
+        $this->status = $status;
 
         return $this;
     }
 
     /**
-     * Set commandid
+     * Set price
      *
-     * @param string $commandid
+     * @param integer $price
      *
-     * @return tickets
+     * @return Command
      */
-    public function setCommandid($commandid)
+    public function setPrice($price)
     {
-        $this->commandid = $commandid;
+        $this->price = $price;
+
+        return $this;
+    }
+
+    /**
+     * Set commandNumber
+     *
+     * @param integer $commandNumber
+     *
+     * @return Command
+     */
+    public function setCommandnumber($commandNumber)
+    {
+        $this->commandNumber = $commandNumber;
+
+        return $this;
+    }
+
+    /**
+     * Set emailToken
+     *
+     * @param integer $emailToken
+     *
+     * @return Command
+     */
+    public function setEmailtoken($emailToken)
+    {
+        $this->emailToken = $emailToken;
 
         return $this;
     }

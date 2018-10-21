@@ -1,6 +1,61 @@
 {# templates/emails/registration.html.twig #}
-<h3>You did it! You registered!</h3>
+<div style="display:inline">
+<img src="http://exemple-louvre.geocomptoir.fr/img/logo-email.png" alt="Musée du Louvre" style="display:inline" />
+    <img src="http://exemple-louvre.geocomptoir.fr/img/pompador.jpg" style="display:inline" />
+</div>
+<hr/>
 
-Hi {{ name }}! You're successfully registered.
 
-Thanks!
+<h3>Bienvenue au musée du Louvre</h3>
+
+Bonjour Monsieur/Madame {{ name }},
+
+<p>Votre commande {{tokenRegistration }} a été validée. Vous devez obligatoirement vous munir de ce billet électronique lors de votre venue.</p>
+
+<p>Vous avez commandé {{ numbertickets }} ticket(s) pour le montant de {{ totalprice }} €.</p>
+
+<p>Vous trouverez ci-dessous le tableau récapitulatif de votre commande : </p>
+<br/>
+<table>
+    <thead>
+    <tr>
+        <th style="border:solid black 2px; padding:4px; text-align:center">Nom</th>
+        <th style="border:solid black 2px; padding:4px; text-align:center">Prénom</th>
+        <th style="border:solid black 2px; padding:4px; text-align:center">Date de naissance</th>
+        <th style="border:solid black 2px; padding:4px; text-align:center">Age</th>
+        <th style="border:solid black 2px; padding:4px; text-align:center">Pays</th>
+        <th style="border:solid black 2px; padding:4px; text-align:center">Date de réservation</th>
+        <th style="border:solid black 2px; padding:4px; text-align:center">Tarif</th>
+        <th style="border:solid black 2px; padding:4px; text-align:center">Prix</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for ticket in tickets %}
+        <tr>
+            <td style="border:solid black 2px; padding:4px; text-align:center">{{ ticket.name }}</td>
+            <td style="border:solid black 2px; padding:4px; text-align:center">{{ ticket.firstname }}</td>
+            <td style="border:solid black 2px; padding:4px; text-align:center">{{ ticket.dateofbirth.date|date('d/m/Y') }}</td>
+            <td style="border:solid black 2px; padding:4px; text-align:center">{{ ticket.age }}</td>
+            <td style="border:solid black 2px; padding:4px; text-align:center">{{ ticket.country }}</td>
+            <td style="border:solid black 2px; padding:4px; text-align:center">{{ ticket.dateofbooking.date|date('d/m/Y') }}</td>
+            <td style="border:solid black 2px; padding:4px; text-align:center">{{ ticket.tarif }}</td>
+            <td style="border:solid black 2px; padding:4px; text-align:center">{{ ticket.price }} €</td>
+        </tr>
+    {% endfor %}
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td style="border:solid black 2px; padding:4px; text-align:center;background-color:black;color:white;">Total :</td>
+        <td colspan="2" style="border:solid black 2px; padding:4px; text-align:center;background-color:black;color:white;">{{ totalprice }}€</td>
+    </tr>
+    </tbody>
+</table>
+
+<p>Billets non remboursables à moins de 15 jours ouvrables avant la date de votre venue.</p>
+<p>Elle s'effectuera auprès du service client : reclamation@exemple-louvre.com ou au numéro de téléphone suivant : 0000000000</p>
+
+<p>Le service Client du Musée du Louvre</p>
+<br/>

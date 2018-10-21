@@ -8,42 +8,62 @@
 
 namespace App\Service;
 
-use Symfony\Component\HttpFoundation\Response;
 use Twig\Environment;
 
 class SendMailer
 {
+
     /**
-     * @var \Twig_Environment
+     * @var Environment
      */
-    private $templating;
+    private $twig;
+
+    /**
+     * @var \Swift_Mailer
+     */
+    private $mailer;
 
     /**
      * SendMailer constructor.
+     * @param Environment $twig
      * @param \Swift_Mailer $mailer
-     * @param \Twig_Environment $templating
      */
-    public function __construct(\Twig_Environment $templating)
-    {
-        $this->templating = $templating;
-    }
-
-    public function sendEmail
-    (
-        $mailto,
-        $name,
+    public function __construct(
+        Environment $twig,
         \Swift_Mailer $mailer
     )
     {
-        $message = (new \Swift_Message('Hello Email'))
-            ->setFrom('send@example.com')
+        $this->twig = $twig;
+        $this->mailer = $mailer;
+    }
+
+    public function registration
+    (
+        $mailto,
+        $name,
+        $totalprice,
+        $numbertickets,
+        $tickets,
+        $tokenRegistration
+    )
+    {
+
+        $message = (new \Swift_Message('[Réservation] Validation de votre réservation aux musée du louvre'))
+            ->setFrom('mvib1983@gmail.com')
             ->setTo($mailto)
             ->setBody(
-                $this->templating->render('emails/registration.html.twig', ['name' => $name]),
+                $this->twig->render('emails/registration.html.twig',
+                    [
+                        'name' => $name,
+                        'totalprice' => $totalprice,
+                        'numbertickets' => $numbertickets,
+                        'tickets' => $tickets,
+                        'tokenRegistration' => $tokenRegistration
+                    ]),
                 'text/html'
             );
 
-        $mailer->send($message);
+        $this->mailer->send($message);
 
     }
 }

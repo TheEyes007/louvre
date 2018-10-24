@@ -37,6 +37,11 @@ class UsersDTO implements UsersDTOInterface
     public $email;
 
     /**
+     * @var bool $status
+     */
+    public $status = false;
+
+    /**
      * @var array $tickets
      */
     public $tickets = [];

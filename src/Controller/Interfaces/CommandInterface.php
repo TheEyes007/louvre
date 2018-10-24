@@ -8,6 +8,7 @@
 
 namespace App\Controller\Interfaces;
 
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Form\FormFactoryInterface;
@@ -26,7 +27,8 @@ interface CommandInterface
     public function __construct(
         Environment $twig,
         FormFactoryInterface $formFactory,
-        RouterInterface $router
+        RouterInterface $router,
+        EntityManagerInterface $em
     );
 
     /**

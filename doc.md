@@ -6,3 +6,6 @@
 4- Créer un test pour vérifier le tarif lorsque la saisie est incorrecte <br/>
 5- Test fonctionnel à réaliser avec Panther
 6- Faire payer la personne avec de persister en base
+7- Utiliser sprintf pour le flash ou toutte concatenation
+8- Optimisation des variables en les utilisant que si plusieurs fois
+9- Reproduire modèle flashbag en utilisant request

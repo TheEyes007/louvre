@@ -9,6 +9,7 @@
 namespace App\Controller;
 
 use App\Controller\Interfaces\AccountsInterface;
+use App\Service\SendMailer;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -46,6 +47,11 @@ class AccountsController implements AccountsInterface
     private $session;
 
     /**
+     * @var SendMailer
+     */
+    private $sendMailer;
+
+    /**
      * @param Environment $twig
      * @param FormFactoryInterface $formFactory
      * @param RouterInterface $router
@@ -55,13 +61,15 @@ class AccountsController implements AccountsInterface
         Environment $twig,
         FormFactoryInterface $formFactory,
         RouterInterface $router,
-        SessionInterface $session
+        SessionInterface $session,
+        SendMailer $sendMailer
     )
     {
         $this->twig = $twig;
         $this->router = $router;
         $this->formFactory = $formFactory;
         $this->session = $session;
+        $this->sendMailer = $sendMailer;
     }
 
     /**
@@ -77,6 +85,15 @@ class AccountsController implements AccountsInterface
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->session->set('user', $form->getData());
+
+            $token = uniqid();
+
+            $this->sendMailer->confirmationEmail(
+                $this->session->get('user')->email,
+                $this->session->get('user')->name,
+                $token
+            );
+
             return new RedirectResponse($this->router->generate('command'));
         }
 

@@ -1,0 +1,19 @@
+{# templates/emails/confirmation.html.twig #}
+
+<div style="display:inline">
+    <img src="http://exemple-louvre.geocomptoir.fr/img/logo-email.png" alt="Musée du Louvre" style="display:inline" />
+    <img src="http://exemple-louvre.geocomptoir.fr/img/pompador.jpg" style="display:inline" height="200" width="400" />
+</div>
+<hr/>
+
+
+<h3>Confirmation de votre adresse Email</h3>
+
+Bonjour Monsieur/Madame {{ name }},
+
+<p>Avant de valider votre commande et afin de pouvoir vous envoyer prochainement vos billets, nous vous invitons à cliquer sur le lien ci-dessous : </p>
+<a href="{{ 'http://' ~ app.request.server.get("SERVER_NAME") ~ '/emailValidation/' ~ tokenConfirmation }}">Activer votre mail</a>
+
+
+<p>Le service Client du Musée du Louvre</p>
+<br/>

@@ -66,4 +66,27 @@ class SendMailer
         $this->mailer->send($message);
 
     }
+
+    public function confirmationEmail
+    (
+        $mailto,
+        $name,
+        $tokenConfirmation
+    )
+    {
+
+        $message = (new \Swift_Message('[Confirmation] Validation de votre Email'))
+            ->setFrom('mvib1983@gmail.com')
+            ->setTo($mailto)
+            ->setBody(
+                $this->twig->render('emails/confirmation.html.twig',
+                    [
+                        'name' => $name,
+                        'tokenConfirmation' => $tokenConfirmation
+                    ]),
+                'text/html'
+            );
+
+        $this->mailer->send($message);
+    }
 }

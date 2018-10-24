@@ -8,14 +8,11 @@
 
 namespace App\Controller\Interfaces;
 
-use App\Service\SendMailer;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\RouterInterface;
-use Symfony\Component\Form\FormFactoryInterface;
 use Twig\Environment;
 
-interface AccountsInterface
+interface MailvalidationInterface
 {
     /**
      * @param $twig
@@ -26,15 +23,12 @@ interface AccountsInterface
      */
     public function __construct(
         Environment $twig,
-        FormFactoryInterface $formFactory,
-        RouterInterface $router,
-        SessionInterface $session,
-        SendMailer $sendMailer
+        RouterInterface $router
     );
 
     /**
      * @param Request $request
      * @return mixed
      */
-    public function accountsInfo(Request $request);
+    public function mailvalidation(Request $request, $token);
 }

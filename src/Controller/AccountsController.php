@@ -86,7 +86,7 @@ class AccountsController implements AccountsInterface
         if ($form->isSubmitted() && $form->isValid()) {
             $this->session->set('user', $form->getData());
 
-            $token = uniqid();
+            $token = date("YmdGis").uniqid();
 
             $this->sendMailer->confirmationEmail(
                 $this->session->get('user')->email,

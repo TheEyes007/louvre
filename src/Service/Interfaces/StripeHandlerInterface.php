@@ -9,10 +9,17 @@
 namespace App\Service\Interfaces;
 
 /**
- * Interface SendMailerInterface
+ * Interface StripeHandlerInterface
  * @package App\Service\Interfaces
  */
 interface StripeHandlerInterface
 {
+    public function __construct
+    (
+        string $token,
+        int $price,
+        string $moneyunit
+    );
 
+    public function getPaiement($name, $firstname);
 }

@@ -52,7 +52,7 @@ class MailvalidationController implements MailvalidationInterface
         if (\is_null($user = $request->getSession()->get('user'))) {
             return new RedirectResponse($this->router->generate('accounts'));
         }
-        
+
         $user->token = $token;
         $user->status = true;
 

@@ -11,6 +11,7 @@ namespace App\Controller;
 
 use App\Controller\Interfaces\PaiementInterface;
 use App\Service\SendMailer;
+use App\Service\StripeHandler;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\RouterInterface;
@@ -46,11 +47,6 @@ class PaiementController implements PaiementInterface
     private $sendMailer;
 
     /**
-     * @var String
-     */
-    private $stripeToken;
-
-    /**
      * ValidationController constructor.
      * @param Environment $twig
      * @param EntityManagerInterface $em
@@ -60,15 +56,13 @@ class PaiementController implements PaiementInterface
         Environment $twig,
         EntityManagerInterface $em,
         RouterInterface $router,
-        SendMailer $sendMailer,
-        string $stripeToken
+        SendMailer $sendMailer
     )
     {
         $this->twig = $twig;
         $this->em = $em;
         $this->router = $router;
-        $this->flash = $flash;
-        $this->flash = $flash;
+        $this->sendMailer = $sendMailer;
     }
 
     /**
@@ -92,92 +86,57 @@ class PaiementController implements PaiementInterface
 
         $totalPrice = $totalPrice * 100;
 
-        // Generateur du contenu du mail
+        //**************************** Generateur du contenu du mail ******************************//
 
-            // numero de commande
-            $tokenRegistration = date("YmdGis").strtoupper(substr($user->name,0,2).substr($user->firstname,0,2)).rand(100000,999999 );
+        // numero de commande
+        $tokenRegistration = date("YmdGis") . strtoupper(substr($user->name, 0, 2) . substr($user->firstname, 0, 2)) . rand(100000, 999999);
 
-            //Information acheteur
-            $username = $user->name . ' ' . $user->firstname;
-            $email= $user->email;
-            $nb_tickets = count($user->tickets);
-            $tickets = $user->tickets;
+        //Information acheteur
+        $username = $user->name . ' ' . $user->firstname;
+        $email = $user->email;
+        $tickets = $user->tickets;
 
-        //Paiement
+        $nb_tickets = count($tickets);
+
+
+        //************ Réalisation du paiement **********************//
+
+        //Récupération du token
         $token = $request->request->get('stripeToken');
 
-            // Set your secret key: remember to change this to your live secret key in production
-            // See your keys here: https://dashboard.stripe.com/account/apikeys
-            \Stripe\Stripe::setApiKey($this->stripeToken);
+        if (!\is_null($token)) {
 
-            if (!\is_null($token)) {
+            //Récupération du service et de la méthode de paiement si l'envoi du token a été fait coté client.
+            $payment = new StripeHandler($token, $totalPrice, 'eur');
+            $payment = $payment->getPaiement($user->name, $user->firstname);
 
-                //Persister en base avant
-                //table id, numero de commande, nom, prenom, email, date_reservation, validation
-                //table tickets, id, nom, prenom, date de viste, type de billet, prix, command (clé étrangère)
+            // Vérification si le paiement a été fait
+            if ($payment[1] === true) {
 
-                //Envoi de confirmation de l'adresse mail
+                // Conversion du prix pour le mail (en cts par defaut)
+                $totalPrice = $totalPrice / 100;
 
-                //Paiement
+                $request->getSession()->getFlashBag()->add('success', $payment[0]);
 
-                try {
-                    $charge = \Stripe\Charge::create([
-                        'amount' => $totalPrice,
-                        'currency' => 'eur',
-                        'description' => sprintf('Le paiement de %d pour Monsieur/Madame %s %s a été validé', $totalPrice, $user->name, $user->firstname),
-                        'source' => $token,
-                    ]);
+                //Envoi du mail
 
-                    $totalPrice = $totalPrice / 100;
+                $this->sendMailer->registration($email, $username, $totalPrice, $nb_tickets, $tickets, $tokenRegistration);
 
-                    $request->getSession()->getFlashBag()->add('success','Votre paiement de '. $totalPrice .'€ a été réalisé avec succès. Vous recevrez par courriel vos tickets de réservation');
+                return new RedirectResponse($this->router->generate('homepage'));
 
-                    // Envoi du mail de confirmation
-                    $this->sendMailer->registration($email, $username, $totalPrice, $nb_tickets, $tickets, $tokenRegistration);
-
-                    return new RedirectResponse($this->router->generate('homepage'));
-
-                } catch(Stripe_CardError $e) {
-
-                    $this->flash->add('danger',$e->getMessage());
-
-                    return new RedirectResponse($this->router->generate('validation'));
-
-                } catch (Stripe_InvalidRequestError $e) {
-
-                    $this->flash->add('danger',$e->getMessage());
-
-                    return new RedirectResponse($this->router->generate('validation'));
-
-                } catch (Stripe_AuthenticationError $e) {
-
-                    $this->flash->add('danger',$e->getMessage());
-
-                    return new RedirectResponse($this->router->generate('validation'));
-
-                } catch (Stripe_ApiConnectionError $e) {
-
-                    $this->flash->add('danger',$e->getMessage());
-
-                    return new RedirectResponse($this->router->generate('validation'));
-
-                } catch (Stripe_Error $e) {
-
-                    $this->flash->add('danger',$e->getMessage());
-
-                    return new RedirectResponse($this->router->generate('validation'));
-
-                } catch (Exception $e) {
-
-                    $this->flash->add('danger',$e->getMessage());
-
-                    return new RedirectResponse($this->router->generate('validation'));
-
-                }
             } else {
-                $this->flash->add('danger','Le paiement a échoué. Merci de contacter notre support avant de réitérer votre commande');
+
+                $request->getSession()->getFlashBag()->add('danger', $payment[0]);
 
                 return new RedirectResponse($this->router->generate('validation'));
+
             }
+        } else {
+
+            $request->getSession()->getFlashBag()->add('danger', "Le paiement a échoué. Merci de contacter notre support avant de réitérer votre commande");
+
+            return new RedirectResponse($this->router->generate('validation'));
+
+        }
     }
 }

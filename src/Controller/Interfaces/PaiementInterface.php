@@ -26,8 +26,7 @@ interface PaiementInterface
         Environment $twig,
         EntityManagerInterface $em,
         RouterInterface $router,
-        SendMailer $sendMailer,
-        string $stripeToken
+        SendMailer $sendMailer
     );
 
     /**

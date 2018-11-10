@@ -28,7 +28,6 @@ class CheckAge implements CheckAgeInterface
     public function getAge()
     {
         $str = $this->dateofbirth;
-        //var_dump($str);die();
         $date = \DateTime::createFromFormat('d/m/Y', $str);
         if($date != false) {
             $dob = \DateTime::createFromFormat('d/m/Y', $str);
@@ -41,6 +40,7 @@ class CheckAge implements CheckAgeInterface
 
     /**
      * CheckAge constructor.
+     * @param $dateofbirth
      */
     public function __construct($dateofbirth)
     {

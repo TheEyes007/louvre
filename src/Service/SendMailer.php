@@ -8,9 +8,10 @@
 
 namespace App\Service;
 
+use App\Service\Interfaces\SendMailerInterface;
 use Twig\Environment;
 
-class SendMailer
+class SendMailer implements SendMailerInterface
 {
 
     /**

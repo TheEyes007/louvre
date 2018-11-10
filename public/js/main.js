@@ -29,6 +29,14 @@ import PriceCalculator from './component/PriceCalculator.js';
           $('#collection_tickets_tickets').parent().remove();
       }
 
+      // Suppression des formulaires dans le DOM quand il y a des erreurs
+      if ($('#collection_tickets_tickets').find('input').length > 0)
+      {
+          $('#collection_tickets_tickets').parent().remove();
+      }
+
+
+
       // INITIALISATION DES DATES PICKINS ET DU CALENDRIER
 
       var startDate = new DatePicker(new Date()).dateBeforeFifty();

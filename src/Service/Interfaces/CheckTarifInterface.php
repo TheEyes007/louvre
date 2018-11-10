@@ -16,6 +16,17 @@ interface CheckTarifInterface
 {
 
     /**
+     * CheckTarifInterface constructor.
+     * @param $age
+     * @param $tarif
+     */
+    public function __construct
+    (
+        $age,
+        $tarif
+    );
+
+    /**
      * @return mixed
      */
     public function getTarif();

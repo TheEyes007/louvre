@@ -8,6 +8,7 @@
 
 namespace App\Controller\Interfaces;
 
+use App\Service\CheckDateofBooking;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\RouterInterface;

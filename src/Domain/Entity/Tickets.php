@@ -17,15 +17,17 @@ use Doctrine\ORM\Mapping as ORM;
 class Tickets
 {
     /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
      * @ORM\ManyToOne(targetEntity="Command")
-     * @ORM\JoinColumn(name="address_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="command_id", referencedColumnName="id")
      */
     private $commandid;
 
@@ -53,6 +55,16 @@ class Tickets
      * @ORM\Column(type="datetime")
      */
     private $dateofbooking;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    private $country;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $age;
 
     //GETTER AND SETTER
 
@@ -119,6 +131,26 @@ class Tickets
     public function getCommandid()
     {
         return $this->commandid;
+    }
+
+    /**
+     * Get country
+     *
+     * @return string
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    /**
+     * Get age
+     *
+     * @return integer
+     */
+    public function getAge()
+    {
+        return $this->age;
     }
 
     /**
@@ -194,13 +226,41 @@ class Tickets
     /**
      * Set commandid
      *
-     * @param string $commandid
+     * @param integer $commandid
      *
      * @return tickets
      */
-    public function setCommandid($commandid)
+    public function setCommandid(Command $id)
     {
-        $this->commandid = $commandid;
+        $this->commandid = $id;
+
+        return $this;
+    }
+
+    /**
+     * Set country
+     *
+     * @param string $country
+     *
+     * @return tickets
+     */
+    public function setCountry($country)
+    {
+        $this->country = $country;
+
+        return $this;
+    }
+
+    /**
+     * Set age
+     *
+     * @param string $age
+     *
+     * @return tickets
+     */
+    public function setAge($age)
+    {
+        $this->age = $age;
 
         return $this;
     }

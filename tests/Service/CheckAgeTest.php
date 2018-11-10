@@ -23,7 +23,7 @@ class CheckAgeTest extends TestCase
      */
     public function testGetAge()
     {
-        $dateofbirth = '02/12/1983';
+        $dateofbirth = '02/01/1983';
         $age = new CheckAge($dateofbirth);
         $age = $age->getAge();
         $this->assertSame(35, $age);

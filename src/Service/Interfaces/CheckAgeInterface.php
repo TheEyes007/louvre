@@ -9,11 +9,16 @@
 namespace App\Service\Interfaces;
 
 /**
- * Interface UsersServiceInterface
- * @package App\Interfaces
+ * Interface CheckAgeInterface
+ * @package App\Service\Interfaces
  */
 interface CheckAgeInterface
 {
+    /**
+     * CheckAgeInterface constructor.
+     * @param $dateofbirth
+     */
+    public function __construct($dateofbirth);
 
     /**
      * @return mixed

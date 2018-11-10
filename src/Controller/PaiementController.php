@@ -10,6 +10,9 @@ namespace App\Controller;
 
 
 use App\Controller\Interfaces\PaiementInterface;
+use App\Domain\DTO\UsersDTO;
+use App\Domain\Entity\Command;
+use App\Domain\Entity\Tickets;
 use App\Service\SendMailer;
 use App\Service\StripeHandler;
 use Doctrine\ORM\EntityManagerInterface;
@@ -116,11 +119,50 @@ class PaiementController implements PaiementInterface
                 // Conversion du prix pour le mail (en cts par defaut)
                 $totalPrice = $totalPrice / 100;
 
+                //********************* Gestion de la base de données *************************//
+
+                // Init Entities
+                $ticketsEnt = new Tickets();
+                $commandEnt = new Command();
+
+                // Remplir depuis le DTO la table commande
+
+                $commandEnt->setFirstname($user->firstname);
+                $commandEnt->setName($user->name);
+                $commandEnt->setDateofbirth($user->dateofbirth);
+                $commandEnt->setEmail($email);
+                $commandEnt->setCommandnumber($tokenRegistration);
+                $commandEnt->setPrice($totalPrice);
+
+                $this->em->persist($commandEnt);
+                $this->em->flush();
+
+                // Remplir depuis le DTO la table tickets
+
+                foreach ($tickets as $value) {
+                    $ticketsEnt->setName($value->name);
+                    $ticketsEnt->setFirstname($value->firstname);
+                    $ticketsEnt->setDateofbirth($value->dateofbirth);
+                    $ticketsEnt->setDateofbooking($value->dateofbooking);
+                    $ticketsEnt->setTarif($value->tarif);
+                    $ticketsEnt->setAge($value->age);
+                    $ticketsEnt->setCountry($value->country);
+                    $ticketsEnt->setCommandid($commandEnt);
+                    $t = clone $ticketsEnt;
+                    $this->em->persist($t);
+                }
+
+                $this->em->flush();
+
                 $request->getSession()->getFlashBag()->add('success', $payment[0]);
 
                 //Envoi du mail
 
                 $this->sendMailer->registration($email, $username, $totalPrice, $nb_tickets, $tickets, $tokenRegistration);
+
+
+                // Destruction de la session
+                $request->getSession()->clear('user');
 
                 return new RedirectResponse($this->router->generate('homepage'));
 

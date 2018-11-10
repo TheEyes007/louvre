@@ -73,9 +73,9 @@ export default class Init {
                 firstDay: 1,
                 showClearBtn: true,
                 disableDayFn:function(date) {
-                    if(date.getDay() == 0) // getDay() returns a value from 0 to 6, 1 represents Monday
+                    if(date.getDay() == 0 || date.getDay() == 2) {
                         return true;
-                    else
+                    }
                         return false;
                 },
                 onDraw: function() {

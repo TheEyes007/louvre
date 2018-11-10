@@ -17,9 +17,11 @@ use Doctrine\ORM\Mapping as ORM;
 class Command
 {
     /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
@@ -44,11 +46,6 @@ class Command
     private $email;
 
     /**
-     * @ORM\Column(type="boolean")
-     */
-    private $status;
-
-    /**
      * @ORM\Column(type="integer")
      */
     private $price;
@@ -57,11 +54,6 @@ class Command
      * @ORM\Column(type="string", length=255)
      */
     private $commandNumber;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $emailToken;
 
     //GETTER AND SETTER
 
@@ -111,16 +103,6 @@ class Command
     }
 
     /**
-     * Get status
-     *
-     * @return bool
-     */
-    public function getStatus()
-    {
-        return $this->status;
-    }
-
-    /**
      * Get price
      *
      * @return integer
@@ -138,16 +120,6 @@ class Command
     public function getCommandnumber()
     {
         return $this->commandNumber;
-    }
-
-    /**
-     * Get emailToken
-     *
-     * @return string
-     */
-    public function getEmailtoken()
-    {
-        return $this->emailToken;
     }
 
     /**
@@ -207,20 +179,6 @@ class Command
     }
 
     /**
-     * Set status
-     *
-     * @param string $status
-     *
-     * @return Command
-     */
-    public function setStatus($status)
-    {
-        $this->status = $status;
-
-        return $this;
-    }
-
-    /**
      * Set price
      *
      * @param integer $price
@@ -237,27 +195,13 @@ class Command
     /**
      * Set commandNumber
      *
-     * @param integer $commandNumber
+     * @param string $commandNumber
      *
      * @return Command
      */
     public function setCommandnumber($commandNumber)
     {
         $this->commandNumber = $commandNumber;
-
-        return $this;
-    }
-
-    /**
-     * Set emailToken
-     *
-     * @param integer $emailToken
-     *
-     * @return Command
-     */
-    public function setEmailtoken($emailToken)
-    {
-        $this->emailToken = $emailToken;
 
         return $this;
     }

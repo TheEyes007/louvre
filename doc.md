@@ -9,3 +9,5 @@
 7- Utiliser sprintf pour le flash ou toutte concatenation
 8- Optimisation des variables en les utilisant que si plusieurs fois
 9- Reproduire modèle flashbag en utilisant request
+10 - Convertir le code avec Exception et try catch
+11 - Datepicker

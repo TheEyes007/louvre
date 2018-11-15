@@ -11,3 +11,15 @@
 9- Reproduire modèle flashbag en utilisant request
 10 - Convertir le code avec Exception et try catch
 11 - Datepicker
+12- Scroll sur datepicker
+13- minifier js - webpack encore
+14- Changer le couleur hamburger
+15- Contacter nous
+16-CGV
+
+Point à voir
+- Implementer CGV et contactez-nous
+- Regarder sur la documentation webpack (comment ajouter ?)
+- Changer le couleur hamburger
+- Note de cadrage
+- Function static pour certains services qui n'appellent pas de services tiers

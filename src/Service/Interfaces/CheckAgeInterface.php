@@ -14,14 +14,9 @@ namespace App\Service\Interfaces;
  */
 interface CheckAgeInterface
 {
-    /**
-     * CheckAgeInterface constructor.
-     * @param $dateofbirth
-     */
-    public function __construct($dateofbirth);
 
     /**
      * @return mixed
      */
-    public function getAge();
+    public static function getAge($dateofbirth);
 }

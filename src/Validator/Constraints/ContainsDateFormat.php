@@ -11,11 +11,11 @@ namespace App\Validator\Constraints;
 use Symfony\Component\Validator\Constraint;
 
 /**
- * Class ContainsMajorAge
+ * Class ContainsDateFormat
  * @package App\Validator\Constraints
  * @Annotation
  */
-class ContainsMajorAge extends Constraint
+class ContainsDateFormat extends Constraint
 {
-    public $message = 'Vous avez "{{ string }}" ans. Vous devez avoir 18 ans pour commander.';
+    public $message = 'La date "{{ string }}" n\'est pas au bon format';
 }

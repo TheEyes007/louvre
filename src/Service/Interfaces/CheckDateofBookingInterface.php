@@ -11,12 +11,8 @@ namespace App\Service\Interfaces;
 
 interface CheckDateofBookingInterface
 {
-    public function __construct(
-        string $tarif,
-        string $dateofbooking
-    );
 
-    public function getHalfday();
+    public static function getHalfday($tarif, $dateofbooking);
 
-    public function checkCloseDay();
+    public static function checkCloseDay($dateofbooking);
 }

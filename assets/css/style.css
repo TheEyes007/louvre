@@ -7,7 +7,7 @@
  */
 
 html{
-  background-image: url("../img/fonds.png");
+  background-image: url("../../public/img/fonds.png");
   background-repeat: repeat-y;
   background-position: center top;
   background-size: 100% auto;
@@ -247,3 +247,15 @@ label{
   background-color: #fefde5 !important;
 }
 
+.cgv{
+  font-size:12px;
+}
+
+.cgv-intro{
+  font-size:12px;
+}
+
+.csv-collection{
+  background-color: rgba(255,255,255,0.8);
+  padding:5px;
+}

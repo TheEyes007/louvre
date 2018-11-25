@@ -92,12 +92,6 @@ class CommandController implements CommandInterface
 
                      $countDate = $requestSQL->countTicketsbydate($dateofbooking->format('Y-m-d'));
 
-                     $dateValidator = new CheckDateofBooking($value->tarif,$dateofbooking->format('d/m/Y'));
-
-                     $dateOpenDayValidator = $dateValidator->getHalfday();
-
-                     $dateCloseDayValidator = $dateValidator->checkCloseDay();
-
                      if (count($countDate) > 0) {
                          if ($countDate[0]['count'] >= 1000) {
 
@@ -110,30 +104,10 @@ class CommandController implements CommandInterface
                              return new RedirectResponse($this->router->generate('command'));
 
                          }
-                     } elseif (\is_array($dateOpenDayValidator)) {
-
-                         $tickets = [];
-                         $message = $dateOpenDayValidator[0];
-
-                         $request->getSession()->getFlashBag()->add('danger', $message);
-
-                         return new RedirectResponse($this->router->generate('command'));
-
-                     } elseif (!$dateCloseDayValidator) {
-
-                         $tickets = [];
-
-                         $request->getSession()->getFlashBag()->add('danger', "Impossible de réserver le Mardi et le Dimanche. Le musée est fermé");
-
-                         return new RedirectResponse($this->router->generate('command'));
-
                      } else {
-                         $age = new CheckAge($value->dateofbirth->format('d/m/Y'));
-                         $age = $age->getAge();
-                         $tarif = new CheckTarif($age, $value->tarif);
-                         $tarif = $tarif->getTarif();
-                         $price = new PriceCalculator($tarif);
-                         $price = $price->getPrice();
+                         $age = CheckAge::getAge($value->dateofbirth->format('d/m/Y'));
+                         $tarif = CheckTarif::getTarif($age, $value->tarif);
+                         $price = PriceCalculator::getPrice($tarif);
                          $countryName = Intl::getRegionBundle()->getCountryName($value->country);
                          $value->tarif = $tarif;
                          $value->age = $age;

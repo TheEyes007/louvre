@@ -24,8 +24,7 @@ class CheckTarifTest extends TestCase
     public function testGetDemijournee()
     {
         $tarif = 'Demi-Journée';
-        $tarif = new CheckTarif(20, $tarif);
-        $tarif = $tarif->getTarif();
+        $tarif = CheckTarif::getTarif(20, $tarif);
         $this->assertSame('Demi-Journée', $tarif);
     }
 
@@ -35,8 +34,7 @@ class CheckTarifTest extends TestCase
     public function testGetTarifreduit()
     {
         $tarif = 'Tarif Réduit';
-        $tarif = new CheckTarif(20, $tarif);
-        $tarif = $tarif->getTarif();
+        $tarif = CheckTarif::getTarif(20, $tarif);
         $this->assertSame('Tarif Réduit', $tarif);
     }
 
@@ -46,8 +44,7 @@ class CheckTarifTest extends TestCase
     public function testGetTarifgratuit()
     {
         $tarif = 'Tarif Normal';
-        $tarif = new CheckTarif(3, $tarif);
-        $tarif = $tarif->getTarif();
+        $tarif = CheckTarif::getTarif(3, $tarif);
         $this->assertSame('Tarif Gratuit', $tarif);
     }
 
@@ -57,8 +54,7 @@ class CheckTarifTest extends TestCase
     public function testGetTarifenfant()
     {
         $tarif = 'Tarif Normal';
-        $tarif = new CheckTarif(10, $tarif);
-        $tarif = $tarif->getTarif();
+        $tarif = CheckTarif::getTarif(5, $tarif);
         $this->assertSame('Tarif Enfant', $tarif);
     }
 
@@ -68,8 +64,7 @@ class CheckTarifTest extends TestCase
     public function testGetTarifnormal()
     {
         $tarif = 'Tarif Normal';
-        $tarif = new CheckTarif(20, $tarif);
-        $tarif = $tarif->getTarif();
+        $tarif = CheckTarif::getTarif(20, $tarif);
         $this->assertSame('Tarif Normal', $tarif);
     }
 
@@ -79,8 +74,7 @@ class CheckTarifTest extends TestCase
     public function testGetTarifsenior()
     {
         $tarif = 'Tarif Normal';
-        $tarif = new CheckTarif(63, $tarif);
-        $tarif = $tarif->getTarif();
+        $tarif = CheckTarif::getTarif(63, $tarif);
         $this->assertSame('Tarif Senior', $tarif);
     }
 }

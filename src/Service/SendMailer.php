@@ -90,4 +90,20 @@ class SendMailer implements SendMailerInterface
 
         $this->mailer->send($message);
     }
+
+    public function contactMail(
+        $name,
+        $title,
+        $email,
+        $content
+    )
+    {
+        $message = (new \Swift_Message("[Contactez-Nous] Message de $name dont le titre est $title"))
+            ->setFrom($email)
+            ->setTo('mvib1983@gmail.com')
+            ->setBody($content);
+
+        $this->mailer->send($message);
+    }
+
 }

@@ -16,18 +16,12 @@ use App\Service\Interfaces\PriceCalculatorInterface;
  */
 class PriceCalculator implements PriceCalculatorInterface
 {
-    /**
-     * @var $tarif string
-     */
-    private $tarif;
 
     /**
      * @return int
      */
-    public function getPrice()
+    public static function getPrice($tarif)
     {
-        $tarif = $this->tarif;
-
         switch ($tarif) {
             case 'Tarif Normal':
                 return 16;
@@ -48,13 +42,5 @@ class PriceCalculator implements PriceCalculatorInterface
                 return 12;
                 break;
         }
-    }
-
-    /**
-     * PriceCalculator constructor.
-     */
-    public function __construct($tarif)
-    {
-        $this->tarif = $tarif;
     }
 }

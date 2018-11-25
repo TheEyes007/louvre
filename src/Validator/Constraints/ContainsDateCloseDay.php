@@ -11,11 +11,11 @@ namespace App\Validator\Constraints;
 use Symfony\Component\Validator\Constraint;
 
 /**
- * Class ContainsMajorAge
+ * Class ContainsDateCloseDay
  * @package App\Validator\Constraints
  * @Annotation
  */
-class ContainsMajorAge extends Constraint
+class ContainsDateCloseDay extends Constraint
 {
-    public $message = 'Vous avez "{{ string }}" ans. Vous devez avoir 18 ans pour commander.';
+    public $message = 'Date de réservation invalide : "{{ string }}". Vous ne pouvez réserver un mardi ou un dimanche.';
 }

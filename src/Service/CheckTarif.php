@@ -18,22 +18,10 @@ class CheckTarif implements CheckTarifInterface
 {
 
     /**
-     * @var $age int
-     */
-    private $age;
-
-    /**
-     * @var $tarif string
-     */
-    private $tarif;
-
-    /**
      * @return string
      */
-    public function getTarif()
+    public static function getTarif($age, $tarif)
     {
-        $age = $this->age;
-        $tarif = $this->tarif;
 
         if ($tarif === 'Tarif Normal') {
             if ($age < 4) {
@@ -48,18 +36,5 @@ class CheckTarif implements CheckTarifInterface
         }
 
         return $tarif;
-    }
-
-    /**
-     * CheckTarif constructor.
-     */
-    public function __construct
-    (
-        $age,
-        $tarif
-    )
-    {
-        $this->age = $age;
-        $this->tarif = $tarif;
     }
 }

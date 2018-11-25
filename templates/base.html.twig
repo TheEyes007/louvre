@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}
-            <link href="{{ asset('materialize/css/materialize.css') }}" rel="stylesheet"/>
-            <link href="{{ asset('css/style.css') }}" rel="stylesheet"/>
+            {{ encore_entry_link_tags('materializecss') }}
+            {{ encore_entry_link_tags('style') }}
             <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         {% endblock %}
     </head>
@@ -59,9 +59,8 @@
             {% block javascripts %}
                 <script src="https://js.stripe.com/v3/"></script>
                 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-                <script type="text/javascript" src="{{ asset('materialize/js/materialize.min.js') }}"></script>
-                <script type="module" src="{{ asset('js/component/Init.js') }}"></script>
-                <script type="module" src="{{ asset('js/main.js') }}"></script>
+                {{ encore_entry_script_tags('materializejs') }}
+                {{ encore_entry_script_tags('main') }}
             {% endblock %}
     </body>
 </html>

@@ -18,32 +18,17 @@ class CheckAge implements CheckAgeInterface
 {
 
     /**
-     * @var $dateofbirth \DateTime
-     */
-    private $dateofbirth;
-
-    /**
      * @return bool|int
      */
-    public function getAge()
+    public static function getAge($dateofbirth)
     {
-        $str = $this->dateofbirth;
-        $date = \DateTime::createFromFormat('d/m/Y', $str);
+        $date = \DateTime::createFromFormat('d/m/Y', $dateofbirth);
         if($date != false) {
-            $dob = \DateTime::createFromFormat('d/m/Y', $str);
+            $dob = \DateTime::createFromFormat('d/m/Y', $dateofbirth);
             $age = $dob->diff(new \DateTime('now'));
             return $age->y;
         } else {
             return false;
         }
-    }
-
-    /**
-     * CheckAge constructor.
-     * @param $dateofbirth
-     */
-    public function __construct($dateofbirth)
-    {
-        $this->dateofbirth = $dateofbirth;
     }
 }

@@ -5,8 +5,8 @@
  * Date: 04/10/2018
  * Time: 13:28
  */
-/**
-namespace Tests\Service;
+
+namespace Tests\Form;
 
 use App\Form\TicketsType;
 use App\Domain\DTO\TicketsDTO;
@@ -14,7 +14,7 @@ use Symfony\Component\Form\Test\TypeTestCase;
 
 class TicketsTypeTest extends TypeTestCase
 {
-    public function submitFormTest()
+    public function testsubmitForm()
     {
         $formData = [
             'name' => 'Acclassato',
@@ -25,14 +25,26 @@ class TicketsTypeTest extends TypeTestCase
             'country' => 'France'
         ];
 
-        $DTOModel = new TicketsDTO();
-        $form = $this->factory->create(TicketsType::class, $DTOModel);
+        $objectToCompare = new TicketsDTO();
+        // $objectToCompare will retrieve data from the form submission; pass it as the second argument
+        $form = $this->factory->create(TicketsType::class, $objectToCompare);
 
-        $objectTest = new TicketsDTO();
+        $object = new TicketsDTO();
+        // ...populate $object properties with the data stored in $formData
 
+        // submit the data to the form directly
         $form->submit($formData);
+
         $this->assertTrue($form->isSynchronized());
-        $this->assertInstanceOf(TicketsDTO::class, $form->getData());
+
+        // check that $objectToCompare was modified as expected when the form was submitted
+        $this->assertEquals($object, $objectToCompare);
+
+        $view = $form->createView();
+        $children = $view->children;
+
+        foreach (array_keys($formData) as $key) {
+            $this->assertArrayHasKey($key, $children);
+        }
     }
 }
- **/

@@ -14,20 +14,8 @@ namespace App\Service\Interfaces;
  */
 interface CheckTarifInterface
 {
-
-    /**
-     * CheckTarifInterface constructor.
-     * @param $age
-     * @param $tarif
-     */
-    public function __construct
-    (
-        $age,
-        $tarif
-    );
-
     /**
      * @return mixed
      */
-    public function getTarif();
+    public static function getTarif($age, $tarif);
 }

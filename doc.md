@@ -16,6 +16,8 @@
 14- Changer le couleur hamburger
 15- Contacter nous
 16-CGV
+17- Réaliser des contraintes sur la classe pour récupérer le tarif
+18 - Contrainte de validation à tester côté JS et PHP
 
 Point à voir
 - Implementer CGV et contactez-nous

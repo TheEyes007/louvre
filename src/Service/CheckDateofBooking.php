@@ -8,51 +8,26 @@
 
 namespace App\Service;
 
-
 use App\Service\Interfaces\CheckDateofBookingInterface;
 
 class CheckDateofBooking implements CheckDateofBookingInterface
 {
 
     /**
-     * @var string $tarif
-     */
-    private $tarif;
-
-    /**
-     * @var string $dateofbooking
-     */
-    private $dateofbooking;
-
-    /**
-     * CheckHalfday constructor.
      * @param $tarif
      * @param $dateofbooking
-     */
-    public function __construct(
-        string $tarif = '',
-        string $dateofbooking = ''
-    )
-    {
-        $this->tarif = $tarif;
-        $this->dateofbooking = $dateofbooking;
-    }
-
-    /**
      * @return array|bool
      */
-    public function getHalfday()
+    public static function getHalfday($tarif, $dateofbooking)
     {
-        $tarif = $this->tarif;
 
-        if ($tarif === 'Demi-Journée') {
+        if($dateofbooking) {
 
-            $dateofbooking = $this->dateofbooking;
             $dateofbooking =  \DateTime::createFromFormat('d/m/Y', $dateofbooking);
 
             $today = new \DateTime('now');
 
-            if($dateofbooking) {
+            if ($tarif === 'Demi-Journée') {
 
                 $interval = $dateofbooking->diff($today);
 
@@ -86,44 +61,26 @@ class CheckDateofBooking implements CheckDateofBookingInterface
 
             } else {
 
-                return $message = ["Format de date incorrect",false];
+                if ($dateofbooking > $today) {
+                    return true;
+                }
 
+                return $message = ['Réservation impossible à une date antérieure à la date du jour', false];
             }
 
         } else {
 
-            return $this->getPastday();
+            return $message = ["Format de date incorrect",false];
 
         }
-    }
-
-    /**
-     * @return array|bool
-     */
-    private function getPastday()
-    {
-        $dateofbooking = $this->dateofbooking;
-        $dateofbooking =  \DateTime::createFromFormat('d/m/Y', $dateofbooking);
-
-        if($dateofbooking) {
-
-            if ($dateofbooking > new \DateTime('now')) {
-                return true;
-            }
-
-            return $message = ['Réservation impossible à une date antérieure à la date du jour',false];
-        }
-
-        return $message = ["Format de date incorrect",false];
     }
 
     /**
      * @return bool
      */
-    public function checkCloseDay()
+    public static function checkCloseDay($dateofbooking)
     {
-
-        return (\DateTime::createFromFormat('d/m/Y', $this->dateofbooking)->format('D') === 'Tue' OR \DateTime::createFromFormat('d/m/Y', $this->dateofbooking)->format('D') === 'Sun')
+        return (\DateTime::createFromFormat('d/m/Y', $dateofbooking)->format('D') === 'Tue' OR \DateTime::createFromFormat('d/m/Y', $dateofbooking)->format('D') === 'Sun')
             ? false
             : true;
 

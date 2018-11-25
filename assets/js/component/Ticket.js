@@ -16,19 +16,27 @@ export default class Ticket{
         let age = new DatePicker(this.dateofbirth).getAge();
         var tarif = this.tarif;
 
-        if (age < 4){
-            tarif = 'Gratuit';
-        }else if (age > 3 && age < 12){
-            tarif = 'Enfant';
-        }else if (age > 11 && age < 60){
-            tarif = 'Normal';
-        }else if (age > 59 && age < 106){
-            tarif = 'Senior';
-        }else if (this.tarif = 'Tarif Réduit'){
+        if (tarif === 'Tarif Normal') {
+            if (age < 4) {
+                tarif = 'Tarif Gratuit';
+            } else if (age > 3 && age < 12) {
+                tarif = 'Tarif Enfant';
+            } else if (age > 11 && age < 60) {
+                tarif = 'Tarif Normal';
+            } else if (age > 59 && age < 106) {
+                tarif = 'Tarif Senior';
+            }
+        }
+
+        if (this.tarif === 'Tarif Réduit') {
             tarif = 'Tarif Réduit';
-        }else if (this.tarif = 'Demi-journée'){
-            tarif = 'Demi-journée';
-        }else{
+        }
+
+        if (this.tarif === 'Tarif Demi-Journée') {
+            tarif = 'Tarif Demi-journée';
+        }
+
+        if (this.tarif === 'Invalide') {
             tarif = 'Invalide';
         }
 
@@ -40,22 +48,22 @@ export default class Ticket{
         var price;
 
         switch (tarif) {
-            case 'Normal':
+            case 'Tarif Normal':
                 price = 16;
                 break;
-            case 'Enfant':
+            case 'Tarif Enfant':
                 price = 8;
                 break;
-            case 'Senior':
+            case 'Tarif Senior':
                 price = 12;
                 break;
-            case 'Réduit':
+            case 'Tarif Réduit':
                 price = 10;
                 break;
-            case 'Demi-Journée':
+            case 'Tarif Demi-journée':
                 price = 8;
                 break;
-            case 'Gratuit':
+            case 'Tarif Gratuit':
                 price = 0;
                 break;
             default:

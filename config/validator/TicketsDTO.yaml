@@ -1,4 +1,7 @@
 App\Domain\DTO\TicketsDTO:
+    constraints:
+        - App\Validator\Constraints\ContainsDateBeforeDay: ~
+        - App\Validator\Constraints\ContainsDateBeforeHour: ~
     properties:
         name:
             - NotBlank:
@@ -33,6 +36,10 @@ App\Domain\DTO\TicketsDTO:
         dateofbooking:
             - NotBlank:
                 message: 'Ce champ ne doit pas être vide.'
+            - App\Validator\Constraints\ContainsDateFormat: ~
+            - App\Validator\Constraints\ContainsDateCloseDay: ~
+            - App\Validator\Constraints\ContainsDateFreeDay: ~
+
         country:
             - NotBlank:
                 message: 'Ce champ ne doit pas être vide.'

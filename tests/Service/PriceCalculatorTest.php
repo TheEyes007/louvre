@@ -24,8 +24,7 @@ class PriceCalculatorTest extends TestCase
     public function testGetPriceHalfday()
     {
         $tarif = 'Demi-Journée';
-        $price = new PriceCalculator($tarif);
-        $price = $price->getPrice();
+        $price = PriceCalculator::getPrice($tarif);
         $this->assertSame(8, $price);
     }
 
@@ -35,8 +34,7 @@ class PriceCalculatorTest extends TestCase
     public function testGetPriceNormal()
     {
         $tarif = 'Tarif Normal';
-        $price = new PriceCalculator($tarif);
-        $price = $price->getPrice();
+        $price = PriceCalculator::getPrice($tarif);
         $this->assertSame(16, $price);
     }
 
@@ -46,8 +44,7 @@ class PriceCalculatorTest extends TestCase
     public function testGetPriceReduce()
     {
         $tarif = 'Tarif Réduit';
-        $price = new PriceCalculator($tarif);
-        $price = $price->getPrice();
+        $price = PriceCalculator::getPrice($tarif);
         $this->assertSame(10, $price);
     }
 
@@ -57,8 +54,7 @@ class PriceCalculatorTest extends TestCase
     public function testGetPriceFree()
     {
         $tarif = 'Tarif Gratuit';
-        $price = new PriceCalculator($tarif);
-        $price = $price->getPrice();
+        $price = PriceCalculator::getPrice($tarif);
         $this->assertSame(0, $price);
     }
 
@@ -68,8 +64,7 @@ class PriceCalculatorTest extends TestCase
     public function testGetPriceSenior()
     {
         $tarif = 'Tarif Senior';
-        $price = new PriceCalculator($tarif);
-        $price = $price->getPrice();
+        $price = PriceCalculator::getPrice($tarif);
         $this->assertSame(12, $price);
     }
 
@@ -79,8 +74,7 @@ class PriceCalculatorTest extends TestCase
     public function testGetPriceChild()
     {
         $tarif = 'Tarif Enfant';
-        $price = new PriceCalculator($tarif);
-        $price = $price->getPrice();
+        $price = PriceCalculator::getPrice($tarif);
         $this->assertSame(8, $price);
     }
 }

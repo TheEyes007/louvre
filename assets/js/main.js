@@ -213,5 +213,15 @@ import PriceCalculator from './component/PriceCalculator.js';
           }
       });
 
+
+      // Conditions générales de vente
+
+      $('.cgv').hide();
+
+      $('.collection-item').click(function() {
+          $('.cgv').hide();
+          $(this).next().show();
+      });
+
   }); // end of document ready
 })(jQuery); // end of jQuery name space

@@ -16,13 +16,7 @@ interface PriceCalculatorInterface
 {
 
     /**
-     * PriceCalculatorInterface constructor.
-     * @param $tarif
-     */
-    public function __construct($tarif);
-
-    /**
      * @return mixed
      */
-    public function getPrice();
+    public static function getPrice($tarif);
 }

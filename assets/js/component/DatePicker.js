@@ -54,15 +54,16 @@ export default class DatePicker{
     }
 
     freeday (an){
-        let JourAn = new Date(an, "00", "01");
+        //let JourAn = new Date(an, "00", "01");
         let FeteTravail = new Date(an, "04", "01");
-        let Victoire1945 = new Date(an, "04", "08");
-        let FeteNationale = new Date(an,"06", "14");
-        let Assomption = new Date(an, "07", "15");
+        //let Victoire1945 = new Date(an, "04", "08");
+        //let FeteNationale = new Date(an,"06", "14");
+        //let Assomption = new Date(an, "07", "15");
         let Toussaint = new Date(an, "10", "01");
-        let Armistice = new Date(an, "10", "11");
+        //let Armistice = new Date(an, "10", "11");
         let Noel = new Date(an, "11", "25");
 
+        /*
         let G = an%19;
         let C = Math.floor(an/100);
         let H = (C - Math.floor(C/4) - Math.floor((8*C+13)/25) + 19*G + 15)%30;
@@ -76,8 +77,10 @@ export default class DatePicker{
         let Ascension = new Date(an, MoisPaques-1, JourPaques+39);
         let Pentecote = new Date(an, MoisPaques-1, JourPaques+49);
         let LundiPentecote = new Date(an, MoisPaques-1, JourPaques+50);
+        */
 
-        return new Array(JourAn, Paques, LundiPaques, FeteTravail, Victoire1945, Ascension, Pentecote, LundiPentecote, FeteNationale, Assomption, Toussaint, Armistice, Noel)
+
+        return new Array(FeteTravail, Toussaint, Noel)
     }
 
     checkdateforToday() {

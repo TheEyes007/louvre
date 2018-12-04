@@ -36,7 +36,6 @@ import PriceCalculator from './component/PriceCalculator.js';
       }
 
 
-
       // INITIALISATION DES DATES PICKINS ET DU CALENDRIER
 
       var startDate = new DatePicker(new Date()).dateBeforeFifty();

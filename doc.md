@@ -14,10 +14,11 @@
 12- Scroll sur datepicker
 13- minifier js - webpack encore
 14- Changer le couleur hamburger
-15- Contacter nous
-16-CGV
+15 - Contacter nous
+16 - CGV
 17- Réaliser des contraintes sur la classe pour récupérer le tarif
 18 - Contrainte de validation à tester côté JS et PHP
+19 - https://symfony.com/doc/current/testing.html#functional-tests
 
 Point à voir
 - Implementer CGV et contactez-nous

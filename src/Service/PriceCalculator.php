@@ -26,7 +26,7 @@ class PriceCalculator implements PriceCalculatorInterface
             case 'Tarif Normal':
                 return 16;
                 break;
-            case 'Demi-Journée':
+            case 'Tarif Demi-Journée':
                 return 8;
                 break;
             case 'Tarif Réduit':

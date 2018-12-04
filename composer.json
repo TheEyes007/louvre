@@ -6,6 +6,7 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "sensio/framework-extra-bundle": "^5.2",
+        "sensiolabs/security-checker": "^5.0",
         "stripe/stripe-php": "^6.19",
         "symfony/apache-pack": "^1.0",
         "symfony/asset": "^4.1",
@@ -23,7 +24,6 @@
         "symfony/yaml": "^4.1"
     },
     "require-dev": {
-        "sensiolabs/security-checker": "^4.1",
         "symfony/maker-bundle": "^1.5",
         "symfony/phpunit-bridge": "^4.1",
         "symfony/test-pack": "^1.0"

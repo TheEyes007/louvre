@@ -20,13 +20,13 @@ class ContainsDateBeforeDayValidator extends ConstraintValidator
         $today = new \DateTime('now');
 
         if ($tickets->tarif === 'Tarif Demi-Journée') {
-            if ($tickets->dateofbooking->format('d/m/Y') < $today->format('d/m/Y')) {
+            if ($tickets->dateofbooking < $today) {
                 $this->context->buildViolation($constraint->message)
                     ->atPath('dateofbooking')
                     ->addViolation();
             }
         } else {
-            if ($tickets->dateofbooking->format('d/m/Y') <= $today->format('d/m/Y')) {
+            if ($tickets->dateofbooking <= $today) {
                 $this->context->buildViolation($constraint->message)
                     ->atPath('dateofbooking')
                     ->addViolation();

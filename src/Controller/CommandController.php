@@ -93,7 +93,10 @@ class CommandController implements CommandInterface
                      $countDate = $requestSQL->countTicketsbydate($dateofbooking->format('Y-m-d'));
 
                      if (count($countDate) > 0) {
+
                          if ($countDate[0]['count'] >= 1000) {
+                             var_dump($countDate[0]['count']);
+                             die();
 
                              $tickets = [];
 
@@ -102,27 +105,26 @@ class CommandController implements CommandInterface
                              $request->getSession()->getFlashBag()->add('danger', $message);
 
                              return new RedirectResponse($this->router->generate('command'));
+                         } else {
+                             $age = CheckAge::getAge($value->dateofbirth->format('d/m/Y'));
 
+                             $tarif = CheckTarif::getTarif($age, $value->tarif);
+                             $price = PriceCalculator::getPrice($tarif);
+                             $countryName = Intl::getRegionBundle()->getCountryName($value->country);
+                             $value->tarif = $tarif;
+                             $value->age = $age;
+                             $value->price = $price;
+                             // From code iso generate country name
+                             $value->country = $countryName;
                          }
-                     } else {
-                         $age = CheckAge::getAge($value->dateofbirth->format('d/m/Y'));
-                         $tarif = CheckTarif::getTarif($age, $value->tarif);
-                         $price = PriceCalculator::getPrice($tarif);
-                         $countryName = Intl::getRegionBundle()->getCountryName($value->country);
-                         $value->tarif = $tarif;
-                         $value->age = $age;
-                         $value->price = $price;
-                         // From code iso generate country name
-                         $value->country = $countryName;
 
-                         return new RedirectResponse($this->router->generate('validation'));
                      }
                  }
-
+                 return new RedirectResponse($this->router->generate('validation'));
              }
-         } else if ($form->isSubmitted() && $form->isValid() === false) {
-             $request->getSession()->getFlashBag()->add('danger','Veuillez Ajouter un ticket avant de valider le formulaire.');
-         }
+             }else if ($form->isSubmitted() && $form->isValid() === false) {
+                 $request->getSession()->getFlashBag()->add('danger', 'Veuillez Ajouter un ticket avant de valider le formulaire.');
+             }
 
          return new Response($this->twig->render('reservation/commands.html.twig',array('usersdto' => $user, 'form' => $form->createView())));
      }

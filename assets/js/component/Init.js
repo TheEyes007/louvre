@@ -85,7 +85,7 @@ export default class Init {
                         let Month = new Date().getMonth();
                         let day = new Date().getDate();
                         let date = new Date(Year,Month,day);
-                        var dayfree = new DatePicker(date).freeday(date.getFullYear());
+                        var dayfree = new DatePicker(date).freeday();
 
                         for(var j = 0; j < dayfree.length; j++){
                             var yearSelector = '[data-year="' + dayfree[j].getFullYear() + '"]';

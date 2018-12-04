@@ -8,11 +8,11 @@
 
 namespace Tests\Form;
 
-use App\Form\TicketsType;
-use App\Domain\DTO\TicketsDTO;
+use App\Domain\DTO\UsersDTO;
+use App\Form\UsersType;
 use Symfony\Component\Form\Test\TypeTestCase;
 
-class TicketsTypeTest extends TypeTestCase
+class UsersTypeTest extends TypeTestCase
 {
     public function testsubmitForm()
     {
@@ -20,16 +20,14 @@ class TicketsTypeTest extends TypeTestCase
             'name' => 'Acclassato',
             'firstname' => 'Florence',
             'dateofbirth' => '19/09/1979',
-            'tarif' => 'Tarif Normal',
-            'dateofbooking' => '10/10/2018',
-            'country' => 'France',
+            'email' => 'matvib1983@live.fr'
         ];
 
-        $objectToCompare = new TicketsDTO('Acclassato','Florence','19/09/1979', 'Tarif Normal','10/10/2018','France');
+        $objectToCompare = new UsersDTO('Acclassato','Florence','19/09/1979','matvib1983@live.fr');
         // $objectToCompare will retrieve data from the form submission; pass it as the second argument
-        $form = $this->factory->create(TicketsType::class, $objectToCompare);
+        $form = $this->factory->create(UsersType::class, $objectToCompare);
 
-        $object = new TicketsDTO();
+        $object = new UsersDTO();
         // ...populate $object properties with the data stored in $formData
 
         // submit the data to the form directly

@@ -23,7 +23,7 @@ class PriceCalculatorTest extends TestCase
      */
     public function testGetPriceHalfday()
     {
-        $tarif = 'Demi-Journée';
+        $tarif = 'Tarif Demi-Journée';
         $price = PriceCalculator::getPrice($tarif);
         $this->assertSame(8, $price);
     }

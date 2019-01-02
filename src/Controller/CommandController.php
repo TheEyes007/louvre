@@ -92,33 +92,46 @@ class CommandController implements CommandInterface
 
                      $countDate = $requestSQL->countTicketsbydate($dateofbooking->format('Y-m-d'));
 
-                     if (count($countDate) > 0) {
+                     if (empty($countDate)) {
 
-                         if ($countDate[0]['count'] >= 1000) {
-                             var_dump($countDate[0]['count']);
-                             die();
+                         $age = CheckAge::getAge($value->dateofbirth->format('d/m/Y'));
 
-                             $tickets = [];
+                         $tarif = CheckTarif::getTarif($age, $value->tarif);
+                         $price = PriceCalculator::getPrice($tarif);
+                         $countryName = Intl::getRegionBundle()->getCountryName($value->country);
+                         $value->tarif = $tarif;
+                         $value->age = $age;
+                         $value->price = $price;
+                         // From code iso generate country name
+                         $value->country = $countryName;
 
-                             $message = "Commande annulée. Il n'est pas possible de réserver les jours où plus de 1000 tickets sont vendus";
+                     } else {
 
-                             $request->getSession()->getFlashBag()->add('danger', $message);
+                         if (count($countDate) > 0) {
 
-                             return new RedirectResponse($this->router->generate('command'));
-                         } else {
-                             $age = CheckAge::getAge($value->dateofbirth->format('d/m/Y'));
+                             if ($countDate[0]['count'] >= 1000) {
 
-                             $tarif = CheckTarif::getTarif($age, $value->tarif);
-                             $price = PriceCalculator::getPrice($tarif);
-                             $countryName = Intl::getRegionBundle()->getCountryName($value->country);
-                             $value->tarif = $tarif;
-                             $value->age = $age;
-                             $value->price = $price;
-                             // From code iso generate country name
-                             $value->country = $countryName;
+                                 $tickets = [];
+
+                                 $message = "Commande annulée. Il n'est pas possible de réserver les jours où plus de 1000 tickets sont vendus";
+
+                                 $request->getSession()->getFlashBag()->add('danger', $message);
+
+                                 return new RedirectResponse($this->router->generate('command'));
+                             } else {
+                                 $age = CheckAge::getAge($value->dateofbirth->format('d/m/Y'));
+
+                                 $tarif = CheckTarif::getTarif($age, $value->tarif);
+                                 $price = PriceCalculator::getPrice($tarif);
+                                 $countryName = Intl::getRegionBundle()->getCountryName($value->country);
+                                 $value->tarif = $tarif;
+                                 $value->age = $age;
+                                 $value->price = $price;
+                                 // From code iso generate country name
+                                 $value->country = $countryName;
+                             }
                          }
-
-                     }
+                    }
                  }
                  return new RedirectResponse($this->router->generate('validation'));
              }

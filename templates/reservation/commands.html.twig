@@ -36,6 +36,7 @@
                 </div>
                 <div class="row tickets-contains">
                         <div class="col s12 m12 tickets-alert">
+                            <p>Les visiteurs ayant commandé un billet tarif-réduit doivent se munir de leur justificatif (Chômeur, Etudiant, Militaire, etc.)</p>
                             <div class="card-panel orange lighten-4 orange-text text-darken-4">Aucun ticket commandé. Ajouter un ticket avant de valider votre commande.</div>
                             {% for label, messages in app.flashes %}
                                 {% for message in messages %}
@@ -69,7 +70,6 @@
                             <button id="validate-form" class="waves-effect waves-green btn-flat" type="button">Valider</button>
                         </div>
                     </div>
-                    <div id="collection_tickets_tickets"></div>
                     <div class="col s12 m12">
                             <a class="waves-effect orange waves-light btn" href="/accounts"><i class="material-icons left">arrow_back</i>Retour</a>
                             {% if not usersdto.status %}
